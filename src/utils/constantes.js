@@ -1,0 +1,1 @@
+export const nombreIcono = ["Proyectos", "Image", "Browser", "Archivo.txt"]
