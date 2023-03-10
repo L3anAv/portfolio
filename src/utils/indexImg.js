@@ -1,5 +1,5 @@
-import Itachi from '../assets/images/itachi.jpg'
-import Gorillaz from '../assets/images/gorillaz.jpg'
+import Cholet from '../assets/images/cholet.jpg'
 import StarWars from '../assets/images/starWars.jpg'
+import CuruchetCasa from '../assets/images/casa_curutchet.jpg'
 
-export {Itachi, Gorillaz, StarWars}
+export {StarWars, CuruchetCasa, Cholet}

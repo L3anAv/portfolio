@@ -7,7 +7,7 @@ export default function darIconoCorrespondiente(nombre){
     switch (nombre) {
       case 'Proyectos':
         return `${ProjectIcons}`
-      case 'Image':
+      case 'Image.jpg':
         return `${ImgIcons}`
       case 'Browser':
         return `${BrowserIcon}`

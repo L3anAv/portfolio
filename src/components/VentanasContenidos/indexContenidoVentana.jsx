@@ -12,7 +12,7 @@ export default function darChildrenCorrespondiente(nombre){
         return <ContenidoVentanaProyectos/>
       case 'Browser':
         return <IndexBrowser/>
-      case 'Image':
+      case 'Image.jpg':
         return <IndexImg />
       case 'Archivo.txt':
         return <IndexArchivo />

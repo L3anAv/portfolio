@@ -22,7 +22,6 @@ export default function App() {
     <>
       <MenuBar />
       <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
-      {/*estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(nombreNombreIconoActivo)} children={darChildrenCorrespondiente(nombreNombreIconoActivo)} titleVentana={nombreNombreIconoActivo}/>*/}
       {estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(nombreNombreIconoActivo)} titleVentana={nombreNombreIconoActivo}/>}
     </>
   )

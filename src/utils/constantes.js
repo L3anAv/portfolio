@@ -1,1 +1,1 @@
-export const nombreIcono = ["Proyectos", "Image", "Browser", "Archivo.txt"]
+export const nombreIcono = ["Proyectos", "Image.jpg", "Browser", "Archivo.txt"]
