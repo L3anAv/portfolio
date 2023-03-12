@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React, {useState, useEffect} from 'react'
-import {nombreIcono as nombres} from '../../utils/constantes'
+import {nombreIcono as nombres} from '../../utils/nombresIconos'
 import {useVentanaContext, useCambioDeEstadoVentana, useGetContenidoVentana} from '../../contexts/ventanaContext'
 
 const Ventana = styled.div`

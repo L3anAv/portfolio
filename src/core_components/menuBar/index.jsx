@@ -39,13 +39,30 @@ const LiBar = styled.li`
 
 export default function index() {
 
-    const [menuExtend, setMenuExtend] = useState(false)
+    const NombresBotones = ["File", "Edit", "Help", "CV"]
 
-    
-    function menuExtendidoGestion(boolean){
-        setMenuExtend(boolean)
-        //Dar children de contenido de la lista con el id y nombre.
-        // y dar top y left por props para cada li
+    const [menuExtend, setMenuExtend] = useState(false)
+    const [OpcionesParaMenuExtended, setOpcionesParaExtendedMenu] = useState({})
+
+    function menuExtendidoGestion(boolean){ 
+        setMenuExtend(boolean) 
+}
+
+    function darContenidoParaExtendedMenu(opcion){
+        switch (opcion) {
+            case NombresBotones[0]:
+                setOpcionesParaExtendedMenu({"opcionesMenu": ["Opcion 1", "Opcion 2"], "left":"2%"})
+                break;
+            case NombresBotones[1]:
+                setOpcionesParaExtendedMenu({"opcionesMenu": ["Opcion 3", "Opcion 4"], "left":"6.8%"})
+                break;
+            case NombresBotones[2]:
+                setOpcionesParaExtendedMenu({"opcionesMenu": ["Opcion 5", "Opcion 6"], "left":"11.2%"})
+                break;
+            case NombresBotones[3]:
+                return;
+                break;
+        }
     }
 
     function handelOpenMenuOption(){ 
@@ -54,17 +71,24 @@ export default function index() {
         : menuExtendidoGestion(false)
     }
 
-  return (
+function handleLiBar(e){
+        // > Determinar item del menu clikeado
+        const opcionClikeada = e.target.id
+        darContenidoParaExtendedMenu(opcionClikeada)
+
+        handelOpenMenuOption()
+    }   
+
+return (
     <>
     <NavBar>
         <UlBar>
-            <LiBar onClick={handelOpenMenuOption}>File</LiBar>
-            {menuExtend && <ExtendedMenu menuExtendidoGestion={menuExtendidoGestion}/>}
-            <LiBar onClick={handelOpenMenuOption}>Edit</LiBar>
-            <LiBar onClick={handelOpenMenuOption}>Help</LiBar>
-            <LiBar onClick={handelOpenMenuOption}>CV</LiBar>
+            {NombresBotones.map(nombre => (
+                <LiBar onClick={handleLiBar} id={nombre}>{nombre}</LiBar>
+            ))}
+            {menuExtend && <ExtendedMenu menuExtendidoGestion={menuExtendidoGestion} OpcionesExtendedMenu={OpcionesParaMenuExtended} />}
         </UlBar>
     </NavBar>
     </>
-  )
+)
 }

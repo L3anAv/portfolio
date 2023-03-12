@@ -1,19 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
-import { nombreIcono } from '../../utils/constantes'
+import { nombreIcono } from '../../utils/nombresIconos'
 import darChildrenCorrespondiente from '../VentanasContenidos/indexContenidoVentana'
 import { useCambioDeEstadoVentana, useSetContenidoVentana } from '../../contexts/ventanaContext'
-
 
 const Contenedor = styled.div`
   position:absolute;
   top:6.3%;
-  left:2%;
   width:8%;
   z-index:1;
   padding:10px;
   background:#b5b5b5;
   border:1px solid black;
+  left:${props => props.left};
 
   ul li{
     padding:8px;
@@ -28,45 +27,38 @@ const Contenedor = styled.div`
   }
 `
 
-export default function extendedMenuOptions({menuExtendidoGestion}) {
+  /*
 
+  TODO: Refactorizar componente para hacerlo generico.
+  
+  [x] Ajustar la funcion de delvolver componente correspondiente segun nombre.
+  [ ] Usar la funcion de dar children correspondiente para la ventana y ahi poner todas las opciones.
+  
+  */
+
+export default function extendedMenuOptions({menuExtendidoGestion, OpcionesExtendedMenu}) {
 
   const setComponeneteHijo = useSetContenidoVentana()
   const estadoVentanaCambiar = useCambioDeEstadoVentana()
 
-  function settearContenidoParaVentana(ContenidoDeVentana){
+  function darContenidoCorrespodienteaVentana(e){
+    const ContenidoDeVentana = e.target.id
     setComponeneteHijo(darChildrenCorrespondiente(ContenidoDeVentana))
   }
 
-  function darContenidoCorrespodienteaVentana(e){
-    const ContenidoDeVentana = e.target
-      switch (ContenidoDeVentana.id) {
-        case nombreIcono[1]:
-          settearContenidoParaVentana(nombreIcono[1])
-          break;
-        case nombreIcono[2]:
-           settearContenidoParaVentana(nombreIcono[2])
-           break;
-        case nombreIcono[3]:
-          settearContenidoParaVentana(nombreIcono[3])
-          break;
-      }
-  }
-
-  function abrirSegunClick(e){
+  function manejadorOnClick(e){
       estadoVentanaCambiar(true)
       menuExtendidoGestion(false)
       darContenidoCorrespodienteaVentana(e)
   }
-  
 
   return (
     <>
-    <Contenedor>
+    <Contenedor left={OpcionesExtendedMenu.left}>
       <ul>
-        <li onClick={abrirSegunClick} id={nombreIcono[1]}>Imagenes</li>
-        <li onClick={abrirSegunClick} id={nombreIcono[2]}>Browser</li>
-        <li onClick={abrirSegunClick} id={nombreIcono[3]}>Editor de texto</li>
+        {OpcionesExtendedMenu.opcionesMenu.map(opcion => (
+          <li onClick={manejadorOnClick} id={opcion}>{opcion}</li>
+        ))}
       </ul>
     </Contenedor>
     </>
