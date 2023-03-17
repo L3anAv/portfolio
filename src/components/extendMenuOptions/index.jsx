@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { nombreIcono } from '../../utils/nombresIconos'
 import darChildrenCorrespondiente from '../VentanasContenidos/indexContenidoVentana'
 import { useCambioDeEstadoVentana, useSetContenidoVentana } from '../../contexts/ventanaContext'
 
@@ -56,8 +55,8 @@ export default function extendedMenuOptions({menuExtendidoGestion, OpcionesExten
     <>
     <Contenedor left={OpcionesExtendedMenu.left}>
       <ul>
-        {OpcionesExtendedMenu.opcionesMenu.map(opcion => (
-          <li onClick={manejadorOnClick} id={opcion}>{opcion}</li>
+        {OpcionesExtendedMenu.opcionesMenu.map((opcion, index) => (
+          <li onClick={manejadorOnClick} id={OpcionesExtendedMenu.id[index]}>{opcion}</li>
         ))}
       </ul>
     </Contenedor>

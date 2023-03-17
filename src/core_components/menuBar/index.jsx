@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
+import React, { useState } from 'react'
+import { nombreIcono } from '../../utils/nombresIconos'
 import ExtendedMenu from '../../components/extendMenuOptions/index'
 
 const NavBar = styled.nav`
@@ -39,11 +40,12 @@ const LiBar = styled.li`
 
 export default function index() {
 
-    const NombresBotones = ["File", "Edit", "Help", "CV"]
-
     const [menuExtend, setMenuExtend] = useState(false)
     const [OpcionesParaMenuExtended, setOpcionesParaExtendedMenu] = useState({})
 
+    const NombresBotones = ["File", "Edit", "Help", "CV"]
+    const OpcionesMenuExtendedFile = [nombreIcono[1], nombreIcono[2], nombreIcono[3]]
+    
     function menuExtendidoGestion(boolean){ 
         setMenuExtend(boolean) 
 }
@@ -51,31 +53,26 @@ export default function index() {
     function darContenidoParaExtendedMenu(opcion){
         switch (opcion) {
             case NombresBotones[0]:
-                setOpcionesParaExtendedMenu({"opcionesMenu": ["Opcion 1", "Opcion 2"], "left":"2%"})
+                setOpcionesParaExtendedMenu({"opcionesMenu": ["Imagen", "Browser", "Notas"], "id": OpcionesMenuExtendedFile, "left":"2%"})
                 break;
             case NombresBotones[1]:
-                setOpcionesParaExtendedMenu({"opcionesMenu": ["Opcion 3", "Opcion 4"], "left":"6.8%"})
+                setOpcionesParaExtendedMenu({"opcionesMenu": [""], "id": [""], "left":"6.8%"})
                 break;
             case NombresBotones[2]:
-                setOpcionesParaExtendedMenu({"opcionesMenu": ["Opcion 5", "Opcion 6"], "left":"11.2%"})
-                break;
-            case NombresBotones[3]:
-                return;
+                setOpcionesParaExtendedMenu({"opcionesMenu": ["Sobre mi"], "id": ["SobreMi"], "left":"11.2%"})
                 break;
         }
     }
 
     function handelOpenMenuOption(){ 
-        return !menuExtend 
+        return !menuExtend
         ? menuExtendidoGestion(true)
         : menuExtendidoGestion(false)
     }
 
 function handleLiBar(e){
-        // > Determinar item del menu clikeado
-        const opcionClikeada = e.target.id
+        const opcionClikeada = e.target.id 
         darContenidoParaExtendedMenu(opcionClikeada)
-
         handelOpenMenuOption()
     }   
 
@@ -84,7 +81,9 @@ return (
     <NavBar>
         <UlBar>
             {NombresBotones.map(nombre => (
-                <LiBar onClick={handleLiBar} id={nombre}>{nombre}</LiBar>
+                nombre != "CV"
+                ? <LiBar onClick={handleLiBar} id={nombre}>{nombre}</LiBar> 
+                : <LiBar id={nombre}>{nombre}</LiBar>
             ))}
             {menuExtend && <ExtendedMenu menuExtendidoGestion={menuExtendidoGestion} OpcionesExtendedMenu={OpcionesParaMenuExtended} />}
         </UlBar>
