@@ -16,7 +16,7 @@
 
 body{
   overflow:hidden;
-  background:url("src/assets/images/fondo-portfolio-avila-matias.png") no-repeat fixed center;
+  background:url("src/assets/images/fondo-portfolio-avila-matias-v2.5.png") no-repeat fixed center;
   background-size:1360px 750px;
 }
 .loader, .loader:before, .loader:after {
@@ -26,6 +26,7 @@ body{
   animation-fill-mode: both;
   animation: bblFadInOut 1.8s infinite ease-in-out;
 }
+
 .loader {
   font-size: 7px;
   color: #0a3d91;

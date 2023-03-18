@@ -1,22 +1,48 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
-import { nombreIcono } from '../../utils/nombresIconos'
-import ExtendedMenu from '../../components/extendMenuOptions/index'
+import { OpcionesDeMenu, OpcionesSubMenu } from  '../../utils/constantes'
+import { useCambioDeEstadoVentana, useSetContenidoVentana } from '../../contexts/ventanaContext'
+import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
 const NavBar = styled.nav`
-    background:#b5b5b5;
-    border-top:2px solid white;
-    border-left:2px solid white;
-    border-right:2px solid black;
-    border-bottom:2px solid black;
+    color:#fff;
+    background:#2d23f1;
 `
 
-const UlBar = styled.ul`
+const UlIncio = styled.ul`
     display:flex;
     margin-left:1.5%;
 `
+const UlOptions = styled.ul`
+    position:absolute;
+    left:2%;
+    top:45px;
+    z-index:1;
+    border:2px solid white;
+`
 
-const LiBar = styled.li`
+const UlOptionsSub = styled(UlOptions)`
+    position:absolute;
+    left:11%;
+    top:45px;
+`
+
+const LiOptions = styled.li`
+    font-size:12px;
+    padding-top:18px;
+    padding-left:15px;
+    background:#2d23f1;
+    padding-right:15px;
+    padding-bottom:10px;
+    font-family:MonosSpace;
+
+    :hover{
+        cursor:pointer;
+        background:#332ded;
+    }
+`
+
+const LiInicio = styled.li`
     margin:8px;
     font-size:12px;
     padding-top:3px;
@@ -25,44 +51,28 @@ const LiBar = styled.li`
     padding-right:8px;
     padding-bottom:3px;
     font-family:MonosSpace;
-    border-top:1px solid white;
-    border-left:1px solid white;
-    border-right:1px solid black;
-    border-bottom:1px solid black;
+    border:2px solid white;
 
     :active{
-        border-bottom:1px solid white;
-        border-right:1px solid white;
-        border-left: 1px solid black;
-        border-top: 1px solid black;
+        border-bottom:2px solid white;
+        border-right:2px solid white;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
     }
 `
 
 export default function index() {
 
     const [menuExtend, setMenuExtend] = useState(false)
-    const [OpcionesParaMenuExtended, setOpcionesParaExtendedMenu] = useState({})
+    const [MenuOptions, setMenuOptions] = useState(false)
+    const [SubMenuOption, setSubMenuOption] = useState([])
 
-    const NombresBotones = ["File", "Edit", "Help", "CV"]
-    const OpcionesMenuExtendedFile = [nombreIcono[1], nombreIcono[2], nombreIcono[3]]
-    
+    const setComponeneteHijo = useSetContenidoVentana()
+    const estadoVentanaCambiar = useCambioDeEstadoVentana()
+
     function menuExtendidoGestion(boolean){ 
-        setMenuExtend(boolean) 
+        setMenuExtend(boolean)
 }
-
-    function darContenidoParaExtendedMenu(opcion){
-        switch (opcion) {
-            case NombresBotones[0]:
-                setOpcionesParaExtendedMenu({"opcionesMenu": ["Imagen", "Browser", "Notas"], "id": OpcionesMenuExtendedFile, "left":"2%"})
-                break;
-            case NombresBotones[1]:
-                setOpcionesParaExtendedMenu({"opcionesMenu": [""], "id": [""], "left":"6.8%"})
-                break;
-            case NombresBotones[2]:
-                setOpcionesParaExtendedMenu({"opcionesMenu": ["Sobre mi"], "id": ["SobreMi"], "left":"11.2%"})
-                break;
-        }
-    }
 
     function handelOpenMenuOption(){ 
         return !menuExtend
@@ -70,23 +80,53 @@ export default function index() {
         : menuExtendidoGestion(false)
     }
 
-function handleLiBar(e){
-        const opcionClikeada = e.target.id 
-        darContenidoParaExtendedMenu(opcionClikeada)
+    function handelOpenOptionsOption(){ 
+        return !MenuOptions
+        ? setMenuOptions(true)
+        : setMenuOptions(false)
+    }
+
+    function setearContenidoParaSubMenu(e){
+        const ContenidoDeVentana = e.target.id
+        setSubMenuOption(OpcionesSubMenu[ContenidoDeVentana])
+      }
+      
+      function handleClickMenuInicio(){
         handelOpenMenuOption()
-    }   
+        handelOpenOptionsOption()
+      }
+
+      function handleMouseEnterMenu(e){
+          setMenuOptions(true)
+          setearContenidoParaSubMenu(e)
+      }
+
+      function CerrarMenu(){
+        setMenuExtend(false)
+        setMenuOptions(false)
+      }
 
 return (
     <>
     <NavBar>
-        <UlBar>
-            {NombresBotones.map(nombre => (
-                nombre != "CV"
-                ? <LiBar onClick={handleLiBar} id={nombre}>{nombre}</LiBar> 
-                : <LiBar id={nombre}>{nombre}</LiBar>
+        <UlIncio onMouseLeave={CerrarMenu}>
+            <LiInicio onClick={handleClickMenuInicio}>
+                Inicio
+            </LiInicio>
+            {menuExtend &&
+            <UlOptions>
+            {OpcionesDeMenu.map(item => (
+                <LiOptions id={item} onMouseEnter={handleMouseEnterMenu}>{item}</LiOptions>
             ))}
-            {menuExtend && <ExtendedMenu menuExtendidoGestion={menuExtendidoGestion} OpcionesExtendedMenu={OpcionesParaMenuExtended} />}
-        </UlBar>
+            </UlOptions>}
+            {MenuOptions &&
+            <UlOptionsSub>
+                {SubMenuOption.map(item => (
+                        <LiOptions id={item}>{item}</LiOptions>
+                ))}
+            </UlOptionsSub>
+            }
+        </UlIncio>
     </NavBar>
     </>
 )

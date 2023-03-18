@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Icono from '../../components/iconsScreen/index'
-import { nombreIcono } from '../../utils/nombresIconos'
+import {nombreIcono} from '../../utils/constantes'
 import darIconoCorrespondiente from '../../utils/darIcono'
 
 function index({nombreDelIcono}) {

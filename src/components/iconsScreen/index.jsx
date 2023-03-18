@@ -80,8 +80,8 @@ export default function iconos({src, nombreIcono, width, height, decirQuienSoy, 
       marginLeft={nombreIcono == "Browser" ? '6px': nombreIcono == "Archivo.txt" ? '7px;' : '5px'}/>
       </SobreImg>
       <NombreIcono
-      color={clickSobreIcono ? '#fff' : '#000'}
-      background={clickSobreIcono ? '#2986cc' : '#fff'}>
+      color={clickSobreIcono ? '#000' : '#fff'}
+      background={clickSobreIcono ? '#fff' : '#2d23f1'}>
         {nombreIcono}
       </NombreIcono>
     </ContenedorIcono>

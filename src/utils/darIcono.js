@@ -1,4 +1,4 @@
-import {nombreIcono} from './nombresIconos'
+import {nombreIcono} from './constantes'
 import ImgIcons from '../assets/iconos/img.png'
 import ArchiveIcon from '../assets/iconos/archive.png'
 import BrowserIcon from '../assets/iconos/browser.png'
