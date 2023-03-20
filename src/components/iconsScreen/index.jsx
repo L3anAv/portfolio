@@ -64,7 +64,6 @@ export default function iconos({src, nombreIcono, width, height, decirQuienSoy, 
   }
 
   return (
-    
     <ContenedorIcono
     onClick={ejecutarTareas}
     onDoubleClick={() => cambiarEstadoVentana(true)}

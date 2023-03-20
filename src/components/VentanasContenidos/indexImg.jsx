@@ -10,8 +10,7 @@ const ContenedorImagenes = styled.div`
 `
 
 const IconoImgCont = styled(Icono)`
-  margin-left:15px;
-  margin-right:15px;
+  margin:8px;
 `
 
 export default function indexImg() {
@@ -20,14 +19,14 @@ export default function indexImg() {
 
     function decirQueIconoQuienSoy(nombre){
       setNombreIconoClikeado(nombre)
-      nombreDelIcono(nombreDelClikeado)
+      /*nombreDelIcono(nombreDelClikeado)*/
     }
 
   return (
     <>
     <ContenedorImagenes>
       {nombresImagenes.map(nombreParaIcono => (
-      <IconoImgCont key={nombreParaIcono} src={darImagenCorrespondiente(nombreParaIcono)} decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={nombreParaIcono} width={'75px'} height={'40px'}/>
+      <IconoImgCont key={nombreParaIcono} src={darImagenCorrespondiente(nombreParaIcono)} decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={nombreParaIcono} width={'70px'} height={'40px'}/>
       ))}
     </ContenedorImagenes>
     </>

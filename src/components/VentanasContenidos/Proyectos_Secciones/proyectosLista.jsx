@@ -1,0 +1,117 @@
+import React from 'react'
+import styled from 'styled-components'
+import Carga from '../../loading/index'
+import {colorPrimario} from '../../../utils/theme'
+import useDataGithub from '../../../Hooks/useDataGithub'
+import {nombreIcono} from '../../../utils/constantes'
+import {useSetContenidoVentana} from '../../../contexts/ventanaContext'
+import darChildrenCorrespondiente from '../../../components/VentanasContenidos/indexContenidoVentana'
+
+const Contenedor = styled.div`
+    display:flex;
+    flex-direction:column;
+`
+
+const Cards = styled.div`
+    width:55%;
+    padding:10px;
+    background:#fff;
+    margin-top:20px;
+    margin-left:20%;
+    margin-bottom:10px;
+    border:1px solid black;
+    grid-row:${props => props.row};
+    grid-column:${props => props.column};
+
+    p{
+        color: #000;
+        margin-left:5%;
+        font-size:15px;
+        margin-top:8px;
+        font-family:MonoSpace;
+    }
+`
+
+const Demo = styled.a`
+    color: #000;
+    padding:2px;
+    font-size:18px;
+    cursor: pointer;
+    font-family:MonoSpace;
+    border:0.5px solid black;
+
+    span{
+        text-decoration: underline;
+    }
+`
+
+const Link = styled.a`
+    color: #0366d6;
+    margin-left:5%;
+    font-size:22px;
+    font-weight:800;
+    cursor: pointer;
+    font-family:MonoSpace;
+    text-decoration: inherit;
+`
+
+const Topic = styled.div`
+    display:flex;
+    font-size:16px;
+    font-family:MonoSpace;
+
+    p{
+        margin-top:8px;
+        font-weight:800;
+        margin-bottom:8px;
+    }
+`
+
+const NavegacionBrowser = styled.div`
+    width:10%;
+    display:flex;
+    margin-top:5px;
+    margin-left:1%;
+    user-select:none;
+
+    p{
+        padding:15px;
+        cursor:pointer;
+        font-size:25px;
+        font-family:MonoSpace;
+        color:${colorPrimario};
+    }
+`
+
+export default function proyectosLista({ClaveTopic}) {
+
+    const [dataProyectos, Loading] = useDataGithub()
+    const contenidoParaVentana = useSetContenidoVentana()
+
+    function volverAtras(){
+        contenidoParaVentana(darChildrenCorrespondiente(nombreIcono[0]))
+    }
+
+    if(Loading){
+        return ( <Carga />)
+    }
+
+    if(!Loading){
+    return(
+        <Contenedor>
+        <NavegacionBrowser><p onClick={volverAtras}> {"<<"} </p></NavegacionBrowser>
+       {dataProyectos.map(item =>{
+            if(item.topics.includes(ClaveTopic)){
+                return (
+                    <Cards key={item.id}>
+                        <Link href={item.html_url}>{item.name}</Link>
+                            {item.homepage != '' ? <p><Demo href={item.homepage}>Demo: <span>{item.homepage}</span></Demo></p> : ''}
+                            <p>{item.description}</p>
+                            <Topic>{item.topics.map((topic, index) => <p key={index}>{topic}</p>)}</Topic>
+                    </Cards>
+                )
+            }
+        })}
+        </Contenedor>
+    )
+}}

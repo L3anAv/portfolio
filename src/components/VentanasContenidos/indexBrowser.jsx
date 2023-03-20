@@ -17,6 +17,7 @@ const Img = styled.img`
         cursor:pointer;
     }
 `
+
 const NavegacionBrowser = styled.div`
     width:90%;
     height:30px;
@@ -38,7 +39,6 @@ const NavegacionBrowser = styled.div`
             text-decoration:underline;
         }
     }
-
 `
 
 export default function indexBrowser() {
