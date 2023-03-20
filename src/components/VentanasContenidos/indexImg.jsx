@@ -1,26 +1,35 @@
 import styled from 'styled-components'
-import React, { useState, useEffect } from 'react'
-import obtenerIndex from '../../utils/obtenerIndex'
-import {StarWars, CuruchetCasa, Cholet} from '../../utils/indexImg'
+import React, { useState} from 'react'
+import Icono from '../../components/iconsScreen/index'
+import {nombresImagenes, darImagenCorrespondiente} from '../../utils/indexImg'
 
-const Img = styled.img`
-    width:100%;
+const ContenedorImagenes = styled.div`
+    display:flex;
+    aling-self:center;
+    flex-direction:row;
+`
+
+const IconoImgCont = styled(Icono)`
+  margin-left:15px;
+  margin-right:15px;
 `
 
 export default function indexImg() {
 
-    const Imagenes = [StarWars, CuruchetCasa, Cholet]
-    const [ImagenSelec, setImgSelect] = useState()
+    const [nombreDelClikeado, setNombreIconoClikeado] = useState('')
 
-    useEffect(() => {
-        const Index = obtenerIndex(Imagenes.length)
-        setImgSelect(Imagenes[Index])
-    }, [])
-    
+    function decirQueIconoQuienSoy(nombre){
+      setNombreIconoClikeado(nombre)
+      nombreDelIcono(nombreDelClikeado)
+    }
 
   return (
     <>
-        <Img src={ImagenSelec}/>
+    <ContenedorImagenes>
+      {nombresImagenes.map(nombreParaIcono => (
+      <IconoImgCont key={nombreParaIcono} src={darImagenCorrespondiente(nombreParaIcono)} decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={nombreParaIcono} width={'75px'} height={'40px'}/>
+      ))}
+    </ContenedorImagenes>
     </>
   ) 
 }

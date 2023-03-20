@@ -10,6 +10,7 @@ const ContenedorIcono = styled.div`
   display:flex;
   aling-content:center;
   flex-direction:column;
+  justify-content:center;
 `
 
 const SobreImg = styled.div`
@@ -32,8 +33,8 @@ const NombreIcono = styled.h3`
   width:130%;
   color:#fff;
   border:1.5px;
-  font-size:11px;
   margin-top:7px;
+  font-size:11px;
   user-select: none;
   text-align: center;
   letter-spacing: 0.6px;

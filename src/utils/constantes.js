@@ -1,5 +1,5 @@
 const OpcionesDeMenu = ["Aplicaciones", "Configuraciones", "Sistema"]
-const nombreIcono = ["Proyectos", "Image.jpg", "Browser", "Archivo.txt"]
+const nombreIcono = ["Proyectos", "Imagenes", "Browser", "Archivo.txt"]
 
 const OpcionesSubMenu = {
     "Aplicaciones": ["Editor de texto", "Pintar.io", "Game"],

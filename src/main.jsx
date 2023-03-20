@@ -1,9 +1,8 @@
 import './index.css'
 import App from './App'
-import React from 'react'
+import React, {useEffect} from 'react'
 import ReactDOM from 'react-dom/client'
 import ContextVentanaProvider from './contexts/ventanaContext'
-
 
 /* TODO
   [x] Renombrar cosas de utils con nombres mas especificos.
@@ -11,9 +10,11 @@ import ContextVentanaProvider from './contexts/ventanaContext'
 */
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  
   <React.StrictMode>
     <ContextVentanaProvider>
         <App />
     </ContextVentanaProvider>
   </React.StrictMode>
 )
+
