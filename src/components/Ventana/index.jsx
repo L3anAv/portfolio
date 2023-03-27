@@ -33,9 +33,10 @@ const BarraMenu = styled.div`
 const TituloVentana = styled.h2`
     color:#fff;
     font-size:18px;
+    margin-top:3px;
     margin-left:-6%;
     user-select:none;
-    font-family:MonosSpace;
+    font-family:IBMRegular;
 `
 
 const CruzCierre = styled.div`

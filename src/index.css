@@ -5,6 +5,11 @@
   src: url('/public/fonts/SpaceMono-Regular.ttf')  format('truetype');
 }
 
+@font-face {
+  font-family: IBMRegular;
+  src: url('/public/fonts/IBMPlexMono-Regular.ttf')  format('truetype');
+}
+
 /* Estilos generales -> */
 * {
   margin:0;

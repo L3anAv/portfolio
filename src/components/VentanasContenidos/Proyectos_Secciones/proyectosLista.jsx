@@ -71,7 +71,7 @@ const NavegacionBrowser = styled.div`
     width:10%;
     display:flex;
     margin-top:5px;
-    margin-left:1%;
+    margin-left:2%;
     user-select:none;
 
     p{
@@ -101,7 +101,7 @@ export default function proyectosLista({ClaveTopic}) {
         <Contenedor>
         <NavegacionBrowser><p onClick={volverAtras}> {"<<"} </p></NavegacionBrowser>
        {dataProyectos.map(item =>{
-            if(item.topics.includes(ClaveTopic)){
+            if(item.topics.includes(ClaveTopic) && item.topics.length > 0){
                 return (
                     <Cards key={item.id}>
                         <Link href={item.html_url}>{item.name}</Link>
