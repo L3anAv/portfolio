@@ -1,4 +1,6 @@
-const colorPrimario = "#00a770"
-/*const colorPrimario = "#2d23f1";*/
 
-export {colorPrimario}
+const colorIconos = "#0000000"
+const colorVentana = "#000000"
+const colorContraste = "#FFFFFF"
+
+export {colorVentana, colorIconos, colorContraste}

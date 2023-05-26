@@ -7,6 +7,12 @@ import darChildrenCorrespondiente from '../../components/VentanasContenidos/inde
 
 const ContenedorDeProyectos = styled.div`
     display:flex;
+    margin-left:45px;
+
+    div{
+        margin-left:10px;
+        margin-right:10px;
+    }
 `
 
 export default function indexProyectos() {

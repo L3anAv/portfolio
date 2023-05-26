@@ -10,6 +10,22 @@
   src: url('/public/fonts/IBMPlexMono-Regular.ttf')  format('truetype');
 }
 
+@font-face {
+  font-family:Didact;
+  src: url('public/fonts/DidactGothic-Regular.ttf');
+}
+
+@font-face {
+  font-family:Elsie;
+  src: url('public/fonts/Elsie-Regular.ttf');
+}
+
+@font-face {
+  font-family:DaysOne;
+  src: url('public/fonts/DaysOne-Regular.ttf');
+}
+
+
 /* Estilos generales -> */
 * {
   margin:0;
@@ -21,9 +37,17 @@
 
 body{
   overflow:hidden;
-  background:url("src/assets/images/fondo-portfolio-avila-matias-v2.5.png") no-repeat fixed center;
-  background-size:1360px 750px;
+  background: linear-gradient(90deg, #dfaee7, #ffffff, #fbe1b8, #ffe3b7);
+  background-size: 250% 100%;
+
+  -webkit-animation: BackgroundAnimation 10s ease infinite;
+  -moz-animation: BackgroundAnimation 10s ease infinite;
+  -o-animation: BackgroundAnimation 10s ease infinite;
+  animation: BackgroundAnimation 10s ease infinite;
+
+  cursor: url("/src/assets/cursor/cursor-old.png"), default;
 }
+
 .loader, .loader:before, .loader:after {
   border-radius: 50%;
   width: 2.5em;
@@ -128,4 +152,47 @@ body{
   to{
     transform: translateY(200%);
   }
+}
+
+@-webkit-keyframes BackgroundAnimation {
+  0%{background-position:0% 27%}
+  50%{background-position:100% 74%}
+  100%{background-position:0% 27%}
+}
+
+@-moz-keyframes BackgroundAnimation {
+  0%{background-position:0% 27%}
+  50%{background-position:100% 74%}
+  100%{background-position:0% 27%}
+}
+
+@-o-keyframes BackgroundAnimation {
+  0%{background-position:0% 27%}
+  50%{background-position:100% 74%}
+  100%{background-position:0% 27%}
+}
+
+@keyframes BackgroundAnimation {
+  0%{background-position:0% 27%}
+  50%{background-position:100% 74%}
+  100%{background-position:0% 27%}
+}
+
+@keyframes IngresoSaludo {
+  0%{margin-left:-100%; opacity:0;}
+  50%{margin-left:5px; opacity:50%;}
+  100%{margin-left:3px; opacity:100%;}
+}
+
+@keyframes IngresoBoton {
+  0%{margin-left:-100%; opacity:0;}
+  50%{margin-left:90px; opacity:50%;}
+  70%{margin-left:110px; opacity:50%;}
+  100%{margin-left:102px; opacity:100%;}
+}
+
+@keyframes OpacidadEntrada{
+  0%{opacity:0;}
+  50%{ opacity:50%;}
+  100%{opacity:100%;}
 }

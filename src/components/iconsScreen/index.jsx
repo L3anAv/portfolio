@@ -1,3 +1,4 @@
+import {colorVentana, colorContraste} from '../../utils/theme'
 import styled from 'styled-components'
 import React, { useEffect, useState } from 'react'
 import { useCambioDeEstadoVentana } from "../../contexts/ventanaContext"
@@ -33,7 +34,7 @@ const NombreIcono = styled.h3`
   width:130%;
   color:#fff;
   border:1.5px;
-  margin-top:7px;
+  margin-top:5px;
   font-size:11px;
   user-select: none;
   text-align: center;
@@ -77,11 +78,11 @@ export default function iconos({src, nombreIcono, width, height, decirQuienSoy, 
       height={height}
       grayscale={clickSobreIcono ? '70%' : '0%'}
       padding={nombreIcono == "Browser" ? '1px' : ''}
-      marginLeft={nombreIcono == "Browser" ? '6px': nombreIcono == "Archivo.txt" ? '7px;' : '5px'}/>
+      marginLeft={nombreIcono == "Browser" ? '6px': nombreIcono == "Archivo.txt" ? '10px;' : '2px'}/>
       </SobreImg>
       <NombreIcono
       color={clickSobreIcono ? '#000' : '#fff'}
-      background={clickSobreIcono ? '#fff' : '#2d23f1'}>
+      background={clickSobreIcono ? colorContraste : colorVentana}>
         {nombreIcono}
       </NombreIcono>
     </ContenedorIcono>

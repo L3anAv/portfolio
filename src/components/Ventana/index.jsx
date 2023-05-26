@@ -1,15 +1,15 @@
 import styled from 'styled-components'
-import {colorPrimario} from '../../utils/theme'
+import {colorVentana, colorContraste} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
 import {nombreIcono} from '../../utils/constantes'
 import {useVentanaContext, useCambioDeEstadoVentana, useGetContenidoVentana} from '../../contexts/ventanaContext'
 
 const Ventana = styled.div`
     position:absolute;
-    background:#b3d1dd;
-    outline:2px solid white;
+    outline:3px solid black;
     top:${props => props.top};
     left:${props => props.left};
+    background:${colorContraste};
     width:${props => props.width};
     height:${props => props.height};
     display:${props => props.display};
@@ -25,7 +25,7 @@ const ContenidoVentana = styled.div`
 const BarraMenu = styled.div`
     height:32px;
     display:flex;
-    background:${colorPrimario};
+    background:${colorVentana};
     justify-content:space-between;
     border-bottom:2px solid white;
 `
@@ -48,7 +48,7 @@ const CruzCierre = styled.div`
     text-align:center;
     font-family:MonosSpace;
     border-top:2px solid white;
-    background:${colorPrimario};
+    background:${colorVentana};
     border-left:2px solid white;
     border-right:2px solid black;
     border-bottom:2px solid black;

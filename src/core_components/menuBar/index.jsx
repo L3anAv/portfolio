@@ -1,47 +1,32 @@
 import styled from 'styled-components'
-import React, { useState } from 'react'
-import { OpcionesDeMenu, OpcionesSubMenu } from  '../../utils/constantes'
-import { useCambioDeEstadoVentana, useSetContenidoVentana } from '../../contexts/ventanaContext'
+import { Link } from 'react-router-dom'
+import {colorVentana} from '../../utils/theme'
+import React, { useState, useEffect } from 'react'
+import {useCambioDeEstadoVentana, useSetContenidoVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
 const NavBar = styled.nav`
     color:#fff;
-    background:#2d23f1;
+    display:flex;
+    margin-top:20px;
+    padding-top:3px;
+    margin-left:30px;
+    margin-right:30px;
+    padding-bottom:3px;
+    border:3px solid white;
+    background:${colorVentana};
+    justify-content:space-between;
 `
 
 const UlIncio = styled.ul`
     display:flex;
-    margin-left:1.5%;
-`
-const UlOptions = styled.ul`
-    position:absolute;
-    left:2%;
-    top:45px;
-    z-index:1;
-    border:2px solid white;
+    margin-left:10px;
+    position:relative;
 `
 
-const UlOptionsSub = styled(UlOptions)`
-    position:absolute;
-    left:11%;
-    top:45px;
+const A = styled(Link)`
+    color:#fff;
 `
-
-const LiOptions = styled.li`
-    font-size:12px;
-    padding-top:18px;
-    padding-left:15px;
-    background:#2d23f1;
-    padding-right:15px;
-    padding-bottom:10px;
-    font-family:MonosSpace;
-
-    :hover{
-        cursor:pointer;
-        background:#332ded;
-    }
-`
-
 const LiInicio = styled.li`
     margin:8px;
     font-size:12px;
@@ -61,73 +46,47 @@ const LiInicio = styled.li`
     }
 `
 
+const Hora = styled.p`
+    font-size:12px;
+    margin-top:12px;
+    margin-left:30px;
+    margin-right:30px;
+    font-family:MonosSpace;
+`
+
 export default function index() {
 
-    const [menuExtend, setMenuExtend] = useState(false)
-    const [MenuOptions, setMenuOptions] = useState(false)
-    const [SubMenuOption, setSubMenuOption] = useState([])
+    const estadoVentana = useCambioDeEstadoVentana()
+    const contenidoVentana = useSetContenidoVentana()
+    const [hora, setHora] = useState(new Date().toLocaleTimeString());
 
-    const setComponeneteHijo = useSetContenidoVentana()
-    const estadoVentanaCambiar = useCambioDeEstadoVentana()
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+        setHora(new Date().toLocaleTimeString());
+        }, 1000);
 
-    function menuExtendidoGestion(boolean){ 
-        setMenuExtend(boolean)
-}
+        return () => {
+        clearInterval(intervalId);
+        };
+    }, []);
 
-    function handelOpenMenuOption(){ 
-        return !menuExtend
-        ? menuExtendidoGestion(true)
-        : menuExtendidoGestion(false)
+    function AbrirVentanaCorrespondiente(){
+        estadoVentana(true)
+       contenidoVentana(darChildrenCorrespondiente("Sobre Mi"))
     }
 
-    function handelOpenOptionsOption(){ 
-        return !MenuOptions
-        ? setMenuOptions(true)
-        : setMenuOptions(false)
-    }
-
-    function setearContenidoParaSubMenu(e){
-        const ContenidoDeVentana = e.target.id
-        setSubMenuOption(OpcionesSubMenu[ContenidoDeVentana])
-      }
-      
-      function handleClickMenuInicio(){
-        handelOpenMenuOption()
-        handelOpenOptionsOption()
-      }
-
-      function handleMouseEnterMenu(e){
-          setMenuOptions(true)
-          setearContenidoParaSubMenu(e)
-      }
-
-      function CerrarMenu(){
-        setMenuExtend(false)
-        setMenuOptions(false)
-      }
-
-return (
+    return (
     <>
-    <NavBar>
-        <UlIncio onMouseLeave={CerrarMenu}>
-            <LiInicio onClick={handleClickMenuInicio}>
-                Inicio
-            </LiInicio>
-            {menuExtend &&
-            <UlOptions>
-            {OpcionesDeMenu.map(item => (
-                <LiOptions id={item} onMouseEnter={handleMouseEnterMenu}>{item}</LiOptions>
-            ))}
-            </UlOptions>}
-            {MenuOptions &&
-            <UlOptionsSub>
-                {SubMenuOption.map(item => (
-                        <LiOptions id={item}>{item}</LiOptions>
-                ))}
-            </UlOptionsSub>
-            }
-        </UlIncio>
-    </NavBar>
+        <NavBar>
+            <UlIncio>
+                <A to={"/"}><LiInicio>Inicio</LiInicio></A>
+                <LiInicio onClick={AbrirVentanaCorrespondiente}>Sobre Mi</LiInicio>
+                <LiInicio>CV</LiInicio>
+            </UlIncio>
+            <Hora>
+                {hora}
+            </Hora>
+        </NavBar>
     </>
 )
 }

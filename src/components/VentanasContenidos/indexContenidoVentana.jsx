@@ -1,4 +1,5 @@
 import React from 'react'
+import SobreMi from './sobreMi'
 import IndexImg from './indexImg'
 import Loader from '../loading/index'
 import IndexBrowser from './indexBrowser'
@@ -22,6 +23,8 @@ export default function darChildrenCorrespondiente(nombre){
         return <ProyectosLista ClaveTopic={"javascript"} />
       case "Otros":
         return <ProyectosLista ClaveTopic={"java"} />
+      case "Sobre Mi":
+        return <SobreMi />;
     }
 
     return <Loader />

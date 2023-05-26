@@ -1,7 +1,8 @@
 import './index.css'
 import App from './App'
-import React, {useEffect} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter as Router } from "react-router-dom"
 import ContextVentanaProvider from './contexts/ventanaContext'
 
 /* TODO
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   
   <React.StrictMode>
     <ContextVentanaProvider>
-        <App />
+      <Router>
+          <App />
+      </Router>
     </ContextVentanaProvider>
   </React.StrictMode>
 )

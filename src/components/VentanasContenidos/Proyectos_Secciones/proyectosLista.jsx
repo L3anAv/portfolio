@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Carga from '../../loading/index'
-import {colorPrimario} from '../../../utils/theme'
+import {colorVentana} from '../../../utils/theme'
 import useDataGithub from '../../../Hooks/useDataGithub'
 import {nombreIcono} from '../../../utils/constantes'
 import {useSetContenidoVentana} from '../../../contexts/ventanaContext'
@@ -46,12 +46,13 @@ const Demo = styled.a`
 `
 
 const Link = styled.a`
-    color: #0366d6;
     margin-left:5%;
     font-size:22px;
     font-weight:800;
     cursor: pointer;
+    user-select: none;
     font-family:MonoSpace;
+    color: ${colorVentana};
     text-decoration: inherit;
 `
 
@@ -74,12 +75,10 @@ const NavegacionBrowser = styled.div`
     margin-left:2%;
     user-select:none;
 
-    p{
-        padding:15px;
+    a{
         cursor:pointer;
-        font-size:25px;
-        font-family:MonoSpace;
-        color:${colorPrimario};
+        margin-left:20px;
+        color:${colorVentana};
     }
 `
 
@@ -99,7 +98,7 @@ export default function proyectosLista({ClaveTopic}) {
     if(!Loading){
     return(
         <Contenedor>
-        <NavegacionBrowser><p onClick={volverAtras}> {"<<"} </p></NavegacionBrowser>
+        <NavegacionBrowser><a onClick={volverAtras}><img src="src/assets/iconos/arrow.png"/></a></NavegacionBrowser>
        {dataProyectos.map(item =>{
             if(item.topics.includes(ClaveTopic) && item.topics.length > 0){
                 return (

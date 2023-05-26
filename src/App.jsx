@@ -1,40 +1,16 @@
-import React, {useState, useEffect, useMemo} from 'react'
-import DesktopPantalla from './core_components/desktopPantalla/index'
-import PantallaInicio from './core_components/pantallaInicio/index'
+import React from 'react'
+import Desktop from './Desktop'
+import { Routes, Route } from 'react-router-dom'
+import Inicio from './core_components/index/index'
 
 export default function App() {
-
-  const [mostrarBloqueo, setmostrarBloqueo] = useState(true)
-
-  function IrAlDesktop(){
-    setearToken()
-    setmostrarBloqueo(false)
-  }
-
-  function consultarSiExisteToken(){
-    if(localStorage.getItem("TOKEN") == "NOINICIO"){
-      setmostrarBloqueo(false)
-    }
-  }
-
-  function setearToken(){
-    localStorage.setItem('TOKEN', 'NOINICIO');
-  }
-
-  useMemo(() => 
-  consultarSiExisteToken(), 
-  [mostrarBloqueo])
-
-  if(!mostrarBloqueo){
-    return(
-      <DesktopPantalla />
-    )
-  }else{
-    return(
-      <>
-        <PantallaInicio IrAlDesktop={IrAlDesktop}/>
-      </>
+  return (
+    <>
+    <Routes>
+        <Route path={"/"} element={<Inicio />} />
+        <Route path={"/os"} element={<Desktop />} />
+      </Routes>
+  </>
   )
-  }
 
 }
