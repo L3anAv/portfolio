@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import IconsDesktopBar from '../iconsDesktop/index'
 import Ventana from '../../components/Ventana/index'
 import darIconoCorrespondiente  from '../../utils/darIcono'
-import {useVentanaContext, useSetContenidoVentana} from '../../contexts/ventanaContext'
+import {useVentanaContext, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
 const Main = styled.div`
@@ -20,12 +20,14 @@ const Tierra = styled.img`
 
 export default function index() {
 
-  const estadoVentana = useVentanaContext();
+  const estadoVentana = useVentanaContext()
+  const setTituloVentana = useSetTituloVentana()
+  const TituloDeLaVentana = useGetTituloVentana()
+
   const contenidoParaVentana = useSetContenidoVentana()
-  const [nombreNombreIconoActivo, setNombreIconoActivo] = useState('')
 
   function nombreDelIcono(nombre){
-    setNombreIconoActivo(nombre)
+    setTituloVentana(nombre)
     const Componente = darChildrenCorrespondiente(nombre)
     contenidoParaVentana(Componente)
   }
@@ -37,7 +39,7 @@ export default function index() {
       <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
       <Tierra src="src/assets/images/output-onlinegiftools.gif" />
       </Main>
-      {estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(nombreNombreIconoActivo)} titleVentana={nombreNombreIconoActivo}/>}
+      {estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(TituloDeLaVentana)}/>}
     </>
   )
 

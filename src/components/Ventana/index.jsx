@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {colorVentana, colorContraste} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
 import {nombreIcono} from '../../utils/constantes'
-import {useVentanaContext, useCambioDeEstadoVentana, useGetContenidoVentana} from '../../contexts/ventanaContext'
+import {useVentanaContext, useCambioDeEstadoVentana, useGetContenidoVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 
 const Ventana = styled.div`
     position:absolute;
@@ -65,10 +65,11 @@ const Img = styled.img`
     transform:scale(0.5);
 `
 
-export default function ventanaContenido({titleVentana, ImgParametro}) {
+export default function ventanaContenido({ImgParametro}) {
     
     const Contenido = useGetContenidoVentana()
-    
+    const TituloParaVentana = useGetTituloVentana()
+
     const valorEstadoVentana = useVentanaContext()
     const cambiarEstadoVentana = useCambioDeEstadoVentana()
 
@@ -82,12 +83,13 @@ export default function ventanaContenido({titleVentana, ImgParametro}) {
         : setMaximizarVentana(false)
     }
 
+    /*
     function overflowActividad(){
         return titleVentana == nombreIcono[1]
         ? setOverflow(false)
         : setOverflow(true)
     }
-
+    */
     function ejecutarTareasCerrarVentana(){
         setAnimacionCerrar(true)
 
@@ -96,11 +98,12 @@ export default function ventanaContenido({titleVentana, ImgParametro}) {
             cambiarEstadoVentana(false)
         }, 100)
     }
-
+    
+    /*
     useEffect(() => {
         overflowActividad()
     }, [])
-    
+    */
 
     return (
     <Ventana
@@ -113,7 +116,7 @@ export default function ventanaContenido({titleVentana, ImgParametro}) {
     >
         <BarraMenu onDoubleClick={maximizarLaVentana}>
             <Img src={ImgParametro} />
-            <TituloVentana>{titleVentana}</TituloVentana>
+            <TituloVentana>{TituloParaVentana}</TituloVentana>
             <CruzCierre 
             onClick={ejecutarTareasCerrarVentana}
             >X</CruzCierre>

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import {colorVentana} from '../../utils/theme'
 import React, { useState, useEffect } from 'react'
-import {useCambioDeEstadoVentana, useSetContenidoVentana} from '../../contexts/ventanaContext'
+import {useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
 const NavBar = styled.nav`
@@ -56,8 +56,10 @@ const Hora = styled.p`
 
 export default function index() {
 
+    const setTituloVentana = useSetTituloVentana()
     const estadoVentana = useCambioDeEstadoVentana()
     const contenidoVentana = useSetContenidoVentana()
+
     const [hora, setHora] = useState(new Date().toLocaleTimeString());
 
     useEffect(() => {
@@ -72,7 +74,8 @@ export default function index() {
 
     function AbrirVentanaCorrespondiente(){
         estadoVentana(true)
-       contenidoVentana(darChildrenCorrespondiente("Sobre Mi"))
+        setTituloVentana("Sobre Mi")
+        contenidoVentana(darChildrenCorrespondiente("Sobre Mi"))
     }
 
     return (
