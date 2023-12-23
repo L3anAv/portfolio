@@ -1,6 +1,6 @@
-import React from 'react'
 import Desktop from './Desktop'
 import styled from 'styled-components'
+import React, { useState } from 'react'
 import Inicio from './core_components/index/index'
 
 const Contenedor = styled.main`
@@ -14,10 +14,11 @@ const Contenedor = styled.main`
 
 const Slogan = styled.p`
   display: flex;
-  color:#F5EEC8;
-  font-size:80px;
+  grid-column:2;
+  color:#555843;
+  font-size:85px;
   user-select:none;
-  text-align:right;
+  text-align:left;
   align-items: center;
   justify-content: center;
   font-family:Quattrocento;
@@ -25,13 +26,22 @@ const Slogan = styled.p`
 `
 
 export default function App() {
+
+  const [mostrarInicio, seMostrarInicio] = useState(true)
+
+  function consultarSiExisteToken(){
+    if(localStorage.getItem("TOKENB") == "NOINICIO"){
+      seMostrarInicio(false)
+    }
+  }
+ 
   return (
     <>
         <Contenedor>
-        <Inicio />
-        <Slogan>Diseño y Desarrollo el sitio web que te ayude a alcanzar tus objetivos de negocio en línea.</Slogan>
+        {mostrarInicio ? <Inicio consultarSiExiste={consultarSiExisteToken} /> : <Desktop />}
+        <Slogan>Diseño y Desarollo el sitio web que te ayude a alcanzar tus objetivos de negocio.</Slogan>
         </Contenedor>
-        {/* <Desktop /> */}
+
   </>
   )
 

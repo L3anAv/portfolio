@@ -6,7 +6,6 @@ import darIconoCorrespondiente from '../../utils/darIcono'
 
 const Contenedor = styled.div`
   display:flex;
-  margin-left:10px;
   flex-direction:column;
 `
 

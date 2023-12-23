@@ -7,15 +7,24 @@ import darIconoCorrespondiente  from '../../utils/darIcono'
 import {useVentanaContext, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
+const Contenedor = styled.div`
+  margin:20px;
+  padding:10px;
+  display: grid;
+  overflow:hidden;
+  border-radius:25px;
+  grid-template-rows: 1fr 1fr;
+
+  background: rgb(245,238,200);
+  background: linear-gradient(163deg, rgba(245,238,200,1) 0%, rgba(167,211,151,1) 100%); 
+`
+
 const Main = styled.div`
   display:flex;
-  position:relative;
-  flex-direction:row;
 `
 
 const Tierra = styled.img`
-  margin-left:510px;
-  transform: scale(1.3);
+  transform:translate(180px, 0px);
 `
 
 export default function index() {
@@ -34,12 +43,14 @@ export default function index() {
 
   return (
     <>
-      <MenuBar />
-      <Main>
-      <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
-      <Tierra src="src/assets/images/output-onlinegiftools.gif" />
-      </Main>
-      {estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(TituloDeLaVentana)}/>}
+      <Contenedor>
+        <MenuBar />
+        <Main>
+          <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
+          <Tierra src="src/assets/images/output-onlinegiftools-2.gif" />
+        </Main>
+        {estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(TituloDeLaVentana)}/>}
+      </Contenedor>
     </>
   )
 

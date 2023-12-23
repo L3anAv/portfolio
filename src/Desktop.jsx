@@ -12,25 +12,22 @@ export default function Desktop() {
   }
 
   function consultarSiExisteToken(){
-    if(localStorage.getItem("TOKEN") == "NOINICIO"){
+    if(localStorage.getItem("TOKENA") == "NOINICIO"){
       setmostrarBloqueo(false)
     }
   }
 
   function setearToken(){
-    localStorage.setItem('TOKEN', 'NOINICIO');
+    localStorage.setItem('TOKENA', 'NOINICIO');
   }
 
   useMemo(() => 
   consultarSiExisteToken(), 
   [mostrarBloqueo])
 
-  if(!mostrarBloqueo){
-    return(
-      <DesktopPantalla />
-    )
-  }else{
-    return(
-         <PantallaInicio IrAlDesktop={IrAlDesktop}/>
-    )}
+  return (
+    <>
+      {mostrarBloqueo ? <PantallaInicio IrAlDesktop={IrAlDesktop}/> : <DesktopPantalla />}
+    </>
+  )
 }

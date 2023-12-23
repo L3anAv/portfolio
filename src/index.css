@@ -42,8 +42,6 @@
 
 body{
   overflow:hidden;
-  background: linear-gradient(90deg, #dfaee7, #ffffff, #fbe1b8, #ffe3b7);
-  background-size: 250% 100%;
 
   -webkit-animation: BackgroundAnimation 10s ease infinite;
   -moz-animation: BackgroundAnimation 10s ease infinite;

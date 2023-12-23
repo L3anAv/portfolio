@@ -7,11 +7,10 @@ import darChildrenCorrespondiente from '../../components/VentanasContenidos/inde
 
 const NavBar = styled.nav`
     color:#fff;
+    height:43px;
     display:flex;
     margin-top:20px;
     padding-top:3px;
-    margin-left:30px;
-    margin-right:30px;
     padding-bottom:3px;
     border:3px solid white;
     background:${colorVentana};

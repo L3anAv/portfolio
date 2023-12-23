@@ -3,8 +3,7 @@ import {colorVentana, colorContraste} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
 
 const PantallaCarga = styled.div`
-    width:100vw;
-    height:100vh;
+
     color:#ffffff;
     background:#000000;
 
