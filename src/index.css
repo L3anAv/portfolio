@@ -6,6 +6,11 @@
 }
 
 @font-face {
+  font-family:Quattrocento;
+  src: url('/public/fonts/Quattrocento-Bold.ttf');
+}
+
+@font-face {
   font-family: IBMRegular;
   src: url('/public/fonts/IBMPlexMono-Regular.ttf')  format('truetype');
 }
