@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import React, { useState } from 'react'
 import Inicio from './core_components/index/index'
 
-const Contenedor = styled.main`
+const Contenedor = styled.div`
     width:100vw;
     height:100vh;
     display:grid;
@@ -14,6 +14,7 @@ const Contenedor = styled.main`
 
 const Slogan = styled.p`
   display: flex;
+  grid-row:1;
   grid-column:2;
   color:#555843;
   font-size:85px;
@@ -22,25 +23,27 @@ const Slogan = styled.p`
   align-items: center;
   justify-content: center;
   font-family:Quattrocento;
-  animation:OpacidadEntrada 0.5s ease;
+  animation:OpacidadEntrada 1s;
 `
 
 export default function App() {
 
   const [mostrarInicio, seMostrarInicio] = useState(true)
 
-  function consultarSiExisteToken(){
-    if(localStorage.getItem("TOKENB") == "NOINICIO"){
-      seMostrarInicio(false)
+  function consultarSiExisteToken() {
+
+    if (localStorage.getItem("TOKENB") === "NOINICIO") {
+      seMostrarInicio(false);
     }
+  
   }
  
   return (
     <>
-        <Contenedor>
-        {mostrarInicio ? <Inicio consultarSiExiste={consultarSiExisteToken} /> : <Desktop />}
+      <Contenedor>
+          {mostrarInicio ? <Inicio consultarSiExiste={consultarSiExisteToken} /> : <Desktop />}
         <Slogan>Diseño y Desarollo el sitio web que te ayude a alcanzar tus objetivos de negocio.</Slogan>
-        </Contenedor>
+      </Contenedor>
 
   </>
   )

@@ -24,6 +24,7 @@ const Main = styled.div`
 `
 
 const Tierra = styled.img`
+  animation:OpacidadEntrada 1.5s;
   transform:translate(180px, 0px);
 `
 

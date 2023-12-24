@@ -3,8 +3,10 @@ import {colorVentana, colorContraste} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
 
 const PantallaCarga = styled.div`
-
+    margin:20px;
+    padding:10px;
     color:#ffffff;
+    border-radius:25px;
     background:#000000;
 
     p{
@@ -13,14 +15,20 @@ const PantallaCarga = styled.div`
 `
 
 const Container = styled.div`
+    margin:20px;
     display:grid;
+    padding:10px;
+    border-radius:25px;
+    background: rgb(245,238,200);
     grid-column-template:1fr 50% 1fr;
+    background: linear-gradient(163deg, rgba(245,238,200,1) 0%, rgba(167,211,151,1) 100%); 
 `
 
 const ContainerInicio = styled.div`
     display:flex;
-    flex-direction:column;
     grid-column:2/3;
+    flex-direction:column;
+    animation:OpacidadEntrada 1s;
 `
 
 const BotonIniciarSs = styled.button`
@@ -118,7 +126,7 @@ export default function pantallaInicio({IrAlDesktop}) {
             setMostrarInicio(true)
             clearInterval(interval);
         }
-        }, 220);
+        }, 50);
         return () => clearInterval(interval);
   }, [fecha]);
 
@@ -135,9 +143,11 @@ export default function pantallaInicio({IrAlDesktop}) {
     return (
         <>
         <PantallaCarga>
-        {lines.map((line, index) => (
-        <div key={index} className="line">{line}</div>
-        ))}
+        {
+        lines.map((line, index) => (
+          <div key={index} className="line">{line}</div>
+        ))
+        }
       </PantallaCarga>
         </>
     )
