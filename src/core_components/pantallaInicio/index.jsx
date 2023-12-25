@@ -3,15 +3,13 @@ import {colorVentana, colorContraste} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
 
 const PantallaCarga = styled.div`
+
     margin:20px;
     padding:10px;
+    grid-row:1;
     color:#ffffff;
     border-radius:25px;
     background:#000000;
-
-    p{
-        text-aling:;
-    }
 `
 
 const Container = styled.div`

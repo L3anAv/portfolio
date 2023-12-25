@@ -85,7 +85,7 @@ const Saludo = styled.p`
   color:#422e15;
   font-size:72px;
   font-family:DaysOne;
-  animation:IngresoSaludo 2s;
+  animation:IngresoSaludo 1s;
 
   ::selection{
     color:#fff;
@@ -98,7 +98,7 @@ const ManoEmoji = styled.span`
   margin: 0 5px;
   display: inline-block;
   transform: rotate(15deg);
-  animation: girarMano 0.6s 5 linear;
+  animation: girarMano 0.6s 1.3s 4 linear;
 `;
 
 const Boton = styled.button`
@@ -134,7 +134,7 @@ function inicio({consultarSiExiste}) {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setLetraBienvenida((prevLetra) => (prevLetra === 'o' ? 'a' : 'o'));
-    }, 1200);
+    }, 2200);
 
     // Limpiar el intervalo al desmontar el componente
     return () => clearInterval(intervalId);

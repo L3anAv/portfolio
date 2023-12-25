@@ -53,7 +53,7 @@ const Hora = styled.p`
     font-family:MonosSpace;
 `
 
-export default function index() {
+export default function index({consultarSiExiste}) {
 
     const setTituloVentana = useSetTituloVentana()
     const estadoVentana = useCambioDeEstadoVentana()
@@ -77,11 +77,20 @@ export default function index() {
         contenidoVentana(darChildrenCorrespondiente("Sobre Mi"))
     }
 
+    function ApagarDesktop(){
+        setearToken()
+        consultarSiExiste()
+    }
+
+    function setearToken(){
+        localStorage.setItem('TOKENB', 'SIINICIO');
+    }
+
     return (
     <>
         <NavBar>
             <UlIncio>
-                <A to={"/"}><LiInicio>Inicio</LiInicio></A>
+                <LiInicio onClick={ApagarDesktop}>Suspender</LiInicio>
                 <LiInicio onClick={AbrirVentanaCorrespondiente}>Sobre Mi</LiInicio>
                 <LiInicio>CV</LiInicio>
             </UlIncio>

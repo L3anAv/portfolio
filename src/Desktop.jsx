@@ -2,7 +2,7 @@ import React, {useState, useMemo} from 'react'
 import PantallaInicio from './core_components/pantallaInicio/index'
 import DesktopPantalla from './core_components/desktopPantalla/index'
 
-export default function Desktop() {
+export default function Desktop(props) {
 
   const [mostrarBloqueo, setmostrarBloqueo] = useState(true)
 
@@ -27,7 +27,7 @@ export default function Desktop() {
 
   return (
     <>
-      {mostrarBloqueo ? <PantallaInicio IrAlDesktop={IrAlDesktop}/> : <DesktopPantalla />}
+      {mostrarBloqueo ? <PantallaInicio IrAlDesktop={IrAlDesktop}/> : <DesktopPantalla consultarSiExiste={props.consultarSiExiste}/>}
     </>
   )
 }

@@ -14,8 +14,8 @@ const Contenedor = styled.div`
   overflow:hidden;
   border-radius:25px;
   grid-template-rows: 1fr 1fr;
-
   background: rgb(245,238,200);
+  animation:BackgroundAnimation 1s infinte;
   background: linear-gradient(163deg, rgba(245,238,200,1) 0%, rgba(167,211,151,1) 100%); 
 `
 
@@ -28,7 +28,7 @@ const Tierra = styled.img`
   transform:translate(180px, 0px);
 `
 
-export default function index() {
+export default function index({consultarSiExiste}) {
 
   const estadoVentana = useVentanaContext()
   const setTituloVentana = useSetTituloVentana()
@@ -45,7 +45,7 @@ export default function index() {
   return (
     <>
       <Contenedor>
-        <MenuBar />
+        <MenuBar consultarSiExiste={consultarSiExiste}/>
         <Main>
           <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
           <Tierra src="src/assets/images/output-onlinegiftools-2.gif" />
