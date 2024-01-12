@@ -16,7 +16,7 @@ const Contenedor = styled.div`
         : 'linear-gradient(142deg, rgba(85,88,67,1) 0%, rgba(245,238,200,1) 100%)'};
     transition:background 1s;
 
-    @media (max-width:840px){
+    @media (max-width:1132px){
       grid-template-row: 1fr;
       grid-template-columns: 1fr;
     }
@@ -37,9 +37,9 @@ const Slogan = styled.p`
   justify-content: center;
   font-family:Quattrocento;
   animation:OpacidadEntrada 1s;
-  font-size: clamp(3.75rem, 3.287rem + 2.4691vw, 6.25rem);
+  font-size: clamp(3.4375rem, 2.8588rem + 3.0864vw, 6.5625rem);
 
-  @media (max-width:840px){
+  @media (max-width:1132px){
     grid-column:1;
   }
 `
@@ -77,27 +77,30 @@ export default function App() {
     setDisplaySlogan('none')
   }
 
+  console.log(windowSize)
+
   useEffect(() => {
 
+    
     actualizarAnchoVentana()
 
     window.addEventListener('resize', actualizarAnchoVentana);
 
     return () => {
       window.removeEventListener('resize', actualizarAnchoVentana);
-    };
+    }
 
   }, [])
 
   useEffect(() => {
 
-    if(windowSize >= 840){
+    if(windowSize >= 1132){
       setnoResponsive(true)
-      setDisplaySlogan('flex')
     }else{
       setnoResponsive(false)
     }
 
+    setDisplaySlogan('flex')
   }, [windowSize])
   
 

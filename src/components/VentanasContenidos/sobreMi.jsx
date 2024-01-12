@@ -6,14 +6,15 @@ const Contenedor = styled.div`
   flex-direction:column;
 
   p{
-    font-size:25px;
     margin-top:10px;
     margin-left:35px;
     margin-right:35px;
     margin-bottom:20px;
     font-family:Didact;
     text-aling:justify;
+    font-size: clamp(0.875rem, 0.7477rem + 0.679vw, 1.5625rem);
   }
+
 `
 
 const ContenedorCentral = styled.div`
@@ -24,18 +25,31 @@ const ContenedorCentral = styled.div`
     div{
       text-align:center;
     }
+
+    @media(max-width:1132px){
+      flex-direction:column;
+
+      div{
+        margin-bottom:-10px;
+      }
+    }
 `
 
 const Textos = styled.div`
   margin-top:120px;
   margin-left:30px;
   flex-direction:column;
+
+  @media(max-width:1132px){
+    margin-top:20px;
+    text-align:justify;
+  }
 `
 
 const H1 = styled.h1`
-  font-size:35px;
   font-family:DaysOne;
-  text-align: center
+  text-align: center;
+  font-size: clamp(1.5625rem, 1.4468rem + 0.6173vw, 2.1875rem);
 `
 
 const Subtitulo = styled.p`
@@ -46,15 +60,24 @@ const Subtitulo = styled.p`
 
 const Img = styled.img`
    width:20%;
+   height:10%;
    margin-top:40px;
    border-radius:50%;
+
+   @media(max-width:1132px){
+     display:block;
+     margin:auto;
+     margin-top:20px;
+     width:50%;
+     height:30%;
+   }
 
 `
 
 function sobreMi() {
   return (
     <Contenedor>
-    <ContenedorCentral> 
+    <ContenedorCentral>
         <Img src="/src/assets/images/sho.jpg"/>
         <Textos>
         <H1>Matias Leandro Avila</H1>

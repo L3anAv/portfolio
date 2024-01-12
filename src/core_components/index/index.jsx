@@ -29,7 +29,7 @@ const ReContenedor = styled.div`
 
   }
 
-  @media(max-width:820px){
+  @media(max-width:1132px){
     div{
       margin-bottom:-50px;
     }
@@ -53,7 +53,7 @@ const Nombre = styled.h1`
     background: #383a29;
   }
 
-  @media(max-width:820px){
+  @media(max-width:1132px){
     margin-left:30px;
   }
 `
@@ -81,7 +81,7 @@ const SubTitulo = styled.div`
 
   }
 
-  @media(max-width:820px){
+  @media(max-width:1132px){
     margin-left:30px;
   }
 `
@@ -136,7 +136,7 @@ const Boton = styled.button`
     cursor: url("/src/assets/cursor/pointer-old.png"), default;
   }
 
-  @media(max-width:820px){
+  @media(max-width:1132px){
     margin-top:0;
     width:40%;
   }
