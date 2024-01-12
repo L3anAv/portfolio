@@ -15,17 +15,23 @@ const NavBar = styled.nav`
     border:3px solid white;
     background:${colorVentana};
     justify-content:space-between;
+
+    @media(max-width:820px){
+        width:83%;
+    }
 `
 
 const UlIncio = styled.ul`
     display:flex;
     margin-left:10px;
     position:relative;
+
+    @media(max-width:820px){
+        margin-left:0;
+    }
+
 `
 
-const A = styled(Link)`
-    color:#fff;
-`
 const LiInicio = styled.li`
     margin:8px;
     font-size:12px;
@@ -43,6 +49,12 @@ const LiInicio = styled.li`
         border-left: 2px solid black;
         border-top: 2px solid black;
     }
+
+    @media(max-width:820px){
+        font-size:10px;
+        margin:6px;
+    }
+
 `
 
 const Hora = styled.p`
@@ -51,6 +63,10 @@ const Hora = styled.p`
     margin-left:30px;
     margin-right:30px;
     font-family:MonosSpace;
+
+    @media(max-width:820px){
+        margin-left:0;
+    }
 `
 
 export default function index({consultarSiExiste}) {

@@ -19,14 +19,24 @@ const ReContenedor = styled.div`
     flex-direction:column;
     animation:OpacidadEntrada 1s;
   }
-    
-    svg{
+  
+  svg{
       opacity:60%;
       cursor:pointer;
       margin-top:12px;
       margin-bottom:12px;
-    }
+  }
 
+  }
+
+  @media(max-width:820px){
+    div{
+      margin-bottom:-50px;
+    }
+    svg{
+      width:28px;
+      height:28px;
+    }
   }
 `
 
@@ -41,6 +51,10 @@ const Nombre = styled.h1`
   ::selection{
     color: #fff;
     background: #383a29;
+  }
+
+  @media(max-width:820px){
+    margin-left:30px;
   }
 `
 
@@ -66,6 +80,10 @@ const SubTitulo = styled.div`
     }
 
   }
+
+  @media(max-width:820px){
+    margin-left:30px;
+  }
 `
 
 const Hola = styled.span`
@@ -82,11 +100,12 @@ const Hola = styled.span`
 `
 
 const Saludo = styled.p`
+
   color:#422e15;
-  font-size:72px;
   font-family:DaysOne;
   animation:IngresoSaludo 1s;
-
+  font-size: clamp(2.8125rem, 2.1759rem + 3.3951vw, 6.25rem);
+  
   ::selection{
     color:#fff;
     background:#422e15;
@@ -102,24 +121,32 @@ const ManoEmoji = styled.span`
 `;
 
 const Boton = styled.button`
+  width:30%;
+  padding:10px;
   color:#F5EEC8;
-  width:200px;
-  font-size:22px;
   background:none;
   margin-top:20px;
   margin-left:105px;
+  border-radius:25px;
+  border:1px solid #F5EEC8;
   animation:IngresoBoton 1.5s;
+  font-size: clamp(0.875rem, 0.713rem + 0.8642vw, 1.75rem);
 
   :hover{
-    cursor:pointer;
-    text-decoration:underline;
+    cursor: url("/src/assets/cursor/pointer-old.png"), default;
+  }
+
+  @media(max-width:820px){
+    margin-top:0;
+    width:40%;
   }
 `
 
 const LetraCambiante = styled.span`
+
   color: #422e15;
-  font-size: 72px;
   font-family: DaysOne;
+  font-size: clamp(2.8125rem, 2.1759rem + 3.3951vw, 6.25rem);
 
   ::selection {
     color: #fff;

@@ -21,11 +21,21 @@ const Contenedor = styled.div`
 
 const Main = styled.div`
   display:flex;
+
+  @media(max-width:820px) and (min-height:700px){
+    transform:translateY(-100px);
+  }
 `
 
 const Tierra = styled.img`
+
+  object-fit: scale-down;
   animation:OpacidadEntrada 1.5s;
-  transform:translate(180px, 0px);
+  transform:translate(120px, 0px);
+
+  @media(max-width:820px){
+    transform:translateX(120px);
+  }
 `
 
 export default function index({consultarSiExiste}) {
