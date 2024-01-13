@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import MenuBar from '../menuBar/index'
 import styled from 'styled-components'
 import IconsDesktopBar from '../iconsDesktop/index'
 import Ventana from '../../components/Ventana/index'
 import darIconoCorrespondiente  from '../../utils/darIcono'
+import TierraGIF from '../../assets/images/output-onlinegiftools-2.gif'
 import {useVentanaContext, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
@@ -58,7 +59,7 @@ export default function index({consultarSiExiste}) {
         <MenuBar consultarSiExiste={consultarSiExiste}/>
         <Main>
           <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
-          <Tierra src="src/assets/images/output-onlinegiftools-2.gif" />
+          <Tierra src={TierraGIF} />
         </Main>
         {estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(TituloDeLaVentana)}/>}
       </Contenedor>

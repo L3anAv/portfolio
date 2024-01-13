@@ -77,10 +77,7 @@ export default function App() {
     setDisplaySlogan('none')
   }
 
-  console.log(windowSize)
-
   useEffect(() => {
-
     
     actualizarAnchoVentana()
 

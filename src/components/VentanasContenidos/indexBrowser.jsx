@@ -39,6 +39,12 @@ const NavegacionBrowser = styled.div`
             text-decoration:underline;
         }
     }
+
+
+    @media(max-width:1132px){
+        font-size:12px;
+        height:auto;
+     }
 `
 
 export default function indexBrowser() {

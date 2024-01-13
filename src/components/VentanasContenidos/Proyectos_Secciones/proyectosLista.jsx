@@ -30,6 +30,11 @@ const Cards = styled.div`
         margin-top:8px;
         font-family:MonoSpace;
     }
+
+    @media(max-width:1132px){
+        width:80%;
+        margin-left:5%;
+     }
 `
 
 const Demo = styled.a`
@@ -43,6 +48,13 @@ const Demo = styled.a`
     span{
         text-decoration: underline;
     }
+
+    @media(max-width:1132px){
+        border:none;
+        color: #555843;
+        font-size:13px;
+        font-weight:900;
+     }
 `
 
 const Link = styled.a`
@@ -65,6 +77,10 @@ const Topic = styled.div`
         margin-top:8px;
         font-weight:800;
         margin-bottom:8px;
+    }
+
+    @media(max-width:1132px){
+       flex-direction:column;
     }
 `
 
