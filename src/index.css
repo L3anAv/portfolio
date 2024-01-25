@@ -7,7 +7,7 @@
 
 @font-face {
   font-family:Quattrocento;
-  src: url('/public/fonts/Quattrocento-Bold.ttf');
+  src: url('/public/fonts/Quattrocento-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -17,17 +17,17 @@
 
 @font-face {
   font-family:Didact;
-  src: url('public/fonts/DidactGothic-Regular.ttf');
+  src: url('/public/fonts/DidactGothic-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family:Elsie;
-  src: url('public/fonts/Elsie-Regular.ttf');
+  src: url('/public/fonts/Elsie-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family:DaysOne;
-  src: url('public/fonts/DaysOne-Regular.ttf');
+  src: url('/public/fonts/DaysOne-Regular.ttf') format('truetype');
 }
 
 

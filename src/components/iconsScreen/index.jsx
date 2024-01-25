@@ -1,7 +1,7 @@
-import {colorVentana, colorContraste} from '../../utils/theme'
 import styled from 'styled-components'
 import React, { useEffect, useState } from 'react'
 import { useCambioDeEstadoVentana } from "../../contexts/ventanaContext"
+import {colorIconoBackground,colorIconoSelectBack} from '../../utils/theme'
 
 const ContenedorIcono = styled.div`
   width:65px;
@@ -82,7 +82,7 @@ export default function iconos({src, nombreIcono, width, height, decirQuienSoy, 
       </SobreImg>
       <NombreIcono
       color={clickSobreIcono ? '#000' : '#fff'}
-      background={clickSobreIcono ? colorContraste : colorVentana}>
+      background={clickSobreIcono ? colorIconoSelectBack : colorIconoBackground}>
         {nombreIcono}
       </NombreIcono>
     </ContenedorIcono>

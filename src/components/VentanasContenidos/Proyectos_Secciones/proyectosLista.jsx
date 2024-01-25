@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Carga from '../../loading/index'
 import {colorVentana} from '../../../utils/theme'
-import useDataGithub from '../../../Hooks/useDataGithub'
+import Arrow from '../../../assets/iconos/arrow.png'
 import {nombreIcono} from '../../../utils/constantes'
+import useDataGithub from '../../../Hooks/useDataGithub'
 import {useSetContenidoVentana} from '../../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../../components/VentanasContenidos/indexContenidoVentana'
 
@@ -24,7 +25,7 @@ const Cards = styled.div`
     grid-column:${props => props.column};
 
     p{
-        color: #000;
+        color: #454545;
         margin-left:5%;
         font-size:15px;
         margin-top:8px;
@@ -38,15 +39,15 @@ const Cards = styled.div`
 `
 
 const Demo = styled.a`
-    color: #000;
     padding:2px;
+    color: #454545;
     font-size:18px;
     cursor: pointer;
     font-family:MonoSpace;
-    border:0.5px solid black;
 
     span{
         text-decoration: underline;
+        overflow-wrap: break-word;
     }
 
     @media(max-width:1132px){
@@ -64,7 +65,7 @@ const Link = styled.a`
     cursor: pointer;
     user-select: none;
     font-family:MonoSpace;
-    color: ${colorVentana};
+    color: #087dcd;
     text-decoration: inherit;
 `
 
@@ -114,7 +115,7 @@ export default function proyectosLista({ClaveTopic}) {
     if(!Loading){
     return(
         <Contenedor>
-        <NavegacionBrowser><a onClick={volverAtras}><img src="src/assets/iconos/arrow.png"/></a></NavegacionBrowser>
+        <NavegacionBrowser><a onClick={volverAtras}><img src={Arrow}/></a></NavegacionBrowser>
        {dataProyectos.map(item =>{
             if(item.topics.includes(ClaveTopic) && item.topics.length > 0){
                 return (

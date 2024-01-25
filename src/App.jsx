@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Inicio from './core_components/index/index'
 
 const Contenedor = styled.div`
-    width:100vw;
+    width:100%;
     height:100vh;
     display:grid;
     background: rgb(167,211,151);
@@ -13,7 +13,7 @@ const Contenedor = styled.div`
     background: ${props =>
       props.mostrarInicio
         ? 'linear-gradient(180deg, rgba(167,211,151,1) 0%, rgba(85,88,67,1) 100%)'
-        : 'linear-gradient(142deg, rgba(85,88,67,1) 0%, rgba(245,238,200,1) 100%)'};
+        : 'linear-gradient(149deg, rgba(128,0,0,1) 0%, rgba(179,128,128,1) 100%)'};
     transition:background 1s;
 
     @media (max-width:1132px){
@@ -30,6 +30,7 @@ const Slogan = styled.p`
     props.mostrarInicio
       ? '#555843'
       : '#fff'};
+  padding:10px;
   text-align:left;
   user-select:none;
   transition:color 1s;

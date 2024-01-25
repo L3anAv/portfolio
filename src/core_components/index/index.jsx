@@ -30,8 +30,9 @@ const ReContenedor = styled.div`
   }
 
   @media(max-width:1132px){
+
     div{
-      margin-bottom:-50px;
+      margin-bottom:-60px;
     }
     svg{
       width:28px;
@@ -104,11 +105,15 @@ const Saludo = styled.p`
   color:#422e15;
   font-family:DaysOne;
   animation:IngresoSaludo 1s;
-  font-size: clamp(2.8125rem, 2.1759rem + 3.3951vw, 6.25rem);
+  font-size: clamp(2.0625rem, 1.287rem + 4.1358vw, 6.25rem);
   
   ::selection{
     color:#fff;
     background:#422e15;
+  }
+
+  @media(max-width:1132px){
+    margin-top:15px;
   }
 
 `
@@ -146,7 +151,7 @@ const LetraCambiante = styled.span`
 
   color: #422e15;
   font-family: DaysOne;
-  font-size: clamp(2.8125rem, 2.1759rem + 3.3951vw, 6.25rem);
+  font-size: clamp(2.0625rem, 1.287rem + 4.1358vw, 6.25rem);
 
   ::selection {
     color: #fff;

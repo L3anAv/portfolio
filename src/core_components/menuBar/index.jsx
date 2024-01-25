@@ -1,19 +1,17 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import {colorVentana} from '../../utils/theme'
+import {colorBarraMenu,} from '../../utils/theme'
 import React, { useState, useEffect } from 'react'
 import {useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
 const NavBar = styled.nav`
-    color:#fff;
+    color:#000;
+    grid-row:2;
     height:43px;
     display:flex;
-    margin-top:20px;
-    padding-top:3px;
-    padding-bottom:3px;
-    border:3px solid white;
-    background:${colorVentana};
+    font-weight: bold;
+    border:2px solid white;
+    background:${colorBarraMenu};
     justify-content:space-between;
 
     @media(max-width:820px){
@@ -41,7 +39,10 @@ const LiInicio = styled.li`
     padding-right:8px;
     padding-bottom:3px;
     font-family:MonosSpace;
-    border:2px solid white;
+    border-top:2px solid white;
+    border-left:2px solid white;
+    border-right:2px solid #808080;
+    border-bottom:2px solid #808080;
 
     :active{
         border-bottom:2px solid white;

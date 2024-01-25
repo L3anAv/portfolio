@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import PerfilFoto from '../../assets/images/sho.jpg'
 const Contenedor = styled.div`
   display:flex;
   flex-direction:column;
@@ -78,7 +78,7 @@ function sobreMi() {
   return (
     <Contenedor>
     <ContenedorCentral>
-        <Img src="/src/assets/images/sho.jpg"/>
+        <Img src={PerfilFoto}/>
         <Textos>
         <H1>Matias Leandro Avila</H1>
         <Subtitulo>Desarollador Frontend | Desarollador Java</Subtitulo>

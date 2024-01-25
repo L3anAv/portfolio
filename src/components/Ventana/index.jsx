@@ -1,10 +1,10 @@
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {colorVentana, colorContraste} from '../../utils/theme'
-import React, {useState, useEffect} from 'react'
-import {nombreIcono} from '../../utils/constantes'
 import {useVentanaContext, useCambioDeEstadoVentana, useGetContenidoVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 
 const Ventana = styled.div`
+    overflow:hidden;
     position:absolute;
     outline:3px solid black;
     top:${props => props.top};
@@ -25,9 +25,9 @@ const ContenidoVentana = styled.div`
 const BarraMenu = styled.div`
     height:32px;
     display:flex;
-    background:${colorVentana};
     justify-content:space-between;
-    border-bottom:2px solid white;
+    border-bottom:4px solid black;
+    background: linear-gradient(142deg, rgba(5,9,132,1) 0%, rgba(8,125,205,1) 100%);
 `
 
 const TituloVentana = styled.h2`
@@ -41,17 +41,17 @@ const TituloVentana = styled.h2`
 
 const CruzCierre = styled.div`
     width:42px;
-    color:#fff;
+    color:#000;
     font-size:15px;
     padding-top:3px;
     user-select:none;
     text-align:center;
+    background:#bdbdbd;
     font-family:MonosSpace;
     border-top:2px solid white;
-    background:${colorVentana};
     border-left:2px solid white;
-    border-right:2px solid black;
-    border-bottom:2px solid black;
+    border-right:2px solid #1c1c1c;
+    border-bottom:2px solid #1c1c1c;
 
     :active{
         border-bottom:2px solid white;

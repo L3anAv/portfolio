@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import {colorVentana, colorContraste} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
+import FotoPerf from '../../assets/images/sho.jpg'
+import {colorVentana, colorContraste} from '../../utils/theme'
 
 const PantallaCarga = styled.div`
 
@@ -132,7 +133,7 @@ export default function pantallaInicio({IrAlDesktop}) {
     return(
         <Container>
             <ContainerInicio>
-                <FotoPerfil src="src/assets/images/sho.jpg" />
+                <FotoPerfil src={FotoPerf} />
                 <BotonIniciarSs onClick={IrAlDesktop}>Iniciar Sesion</BotonIniciarSs>
             </ContainerInicio>
         </Container>

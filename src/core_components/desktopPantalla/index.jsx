@@ -5,24 +5,22 @@ import IconsDesktopBar from '../iconsDesktop/index'
 import Ventana from '../../components/Ventana/index'
 import darIconoCorrespondiente  from '../../utils/darIcono'
 import TierraGIF from '../../assets/images/output-onlinegiftools-2.gif'
-import {useVentanaContext, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
+import {useVentanaContext, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 
 const Contenedor = styled.div`
-  margin:20px;
-  padding:10px;
   display: grid;
   overflow:hidden;
-  border-radius:25px;
-  grid-template-rows: 1fr 1fr;
-  background: rgb(245,238,200);
+  background:#008080;
+  margin:10px 10px 35px 10px;
+  grid-template-rows: 1fr 47px;
   animation:BackgroundAnimation 1s infinte;
-  background: linear-gradient(163deg, rgba(245,238,200,1) 0%, rgba(167,211,151,1) 100%); 
+  /*background: linear-gradient(163deg, rgba(245,238,200,1) 0%, rgba(167,211,151,1) 100%);*/
 `
 
 const Main = styled.div`
   display:flex;
-
+  grid-row:1;
   @media(max-width:820px) and (min-height:700px){
     transform:translateY(-100px);
   }
