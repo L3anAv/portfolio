@@ -1,6 +1,6 @@
 import Desktop from './Desktop'
 import styled from 'styled-components'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect} from 'react'
 import Inicio from './core_components/index/index'
 
 const Contenedor = styled.div`
@@ -9,15 +9,13 @@ const Contenedor = styled.div`
     display:grid;
     background: rgb(167,211,151);
     grid-template-columns: 1fr 1fr;
-
     background: ${props =>
       props.mostrarInicio
         ? 'linear-gradient(180deg, rgba(167,211,151,1) 0%, rgba(85,88,67,1) 100%)'
-        : 'linear-gradient(149deg, rgba(128,0,0,1) 0%, rgba(179,128,128,1) 100%)'};
+        : 'linear-gradient(149deg, rgba(86,78,104,1) 0%, rgba(45,38,61,1) 100%)'};
     transition:background 1s;
-
     @media (max-width:1132px){
-      grid-template-row: 1fr;
+      grid-template-row: 1fr 1fr;
       grid-template-columns: 1fr;
     }
 `
@@ -39,22 +37,34 @@ const Slogan = styled.p`
   font-family:Quattrocento;
   animation:OpacidadEntrada 1s;
   font-size: clamp(3.4375rem, 2.8588rem + 3.0864vw, 6.5625rem);
+  text-shadow:${props => props.mostrarInicio 
+  ? `none`
+  : ` 0 0 7px #0762bc,
+    0 0 10px #0762bc,
+    0 0 21px #0762bc,
+    0 0 42px #0762bc,
+    0 0 82px #0762bc,
+    0 0 92px #0762bc,
+    0 0 102px #0762bc,
+    0 0 151px #0762bc;`}
+ 
 
   @media (max-width:1132px){
+    grid-row:1;
     grid-column:1;
+    text-shadow:none;
   }
 `
 
 const Boton = styled.button`
-  width:30%;
+  width:80%;
   height:30%;
+  grid-row:2;
   color:white;
-  grid-column:1;
+  margin-left:30px;
   background:none;
-  margin-left:95px;
   border-radius:25px;
   border:1px solid white;
-  animation:IngresoBoton 1.5s;
   font-size: clamp(0.875rem, 0.713rem + 0.8642vw, 1.75rem);
 
   :hover{

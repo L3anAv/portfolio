@@ -7,22 +7,24 @@ import darChildrenCorrespondiente from '../../components/VentanasContenidos/inde
 const NavBar = styled.nav`
     color:#000;
     grid-row:2;
-    height:43px;
+    height:40px;
     display:flex;
     font-weight: bold;
-    border:2px solid white;
+    border:3px solid white;
     background:${colorBarraMenu};
-    justify-content:space-between;
-
-    @media(max-width:820px){
-        width:83%;
-    }
+    justify-content:space-between;    
 `
 
 const UlIncio = styled.ul`
     display:flex;
-    margin-left:10px;
     position:relative;
+
+    span{
+        padding-top:0;
+        margin-left:10px;
+        margin-right:10px;
+        border-right:2px solid white;
+    }
 
     @media(max-width:820px){
         margin-left:0;
@@ -31,9 +33,9 @@ const UlIncio = styled.ul`
 `
 
 const LiInicio = styled.li`
-    margin:8px;
+    margin:5px;
     font-size:12px;
-    padding-top:3px;
+    padding-top:2px;
     padding-left:8px;
     user-select:none;
     padding-right:8px;
@@ -59,11 +61,12 @@ const LiInicio = styled.li`
 `
 
 const Hora = styled.p`
-    font-size:12px;
-    margin-top:12px;
-    margin-left:30px;
-    margin-right:30px;
+    font-size:13px;
+    margin-top:3px;
+    margin-bottom:3px;
+    padding:8px;
     font-family:MonosSpace;
+    border-left:2px solid white;
 
     @media(max-width:820px){
         margin-left:0;
@@ -107,8 +110,8 @@ export default function index({consultarSiExiste}) {
     <>
         <NavBar>
             <UlIncio>
-                <LiInicio onClick={ApagarDesktop}>Suspender</LiInicio>
-                <LiInicio onClick={AbrirVentanaCorrespondiente}>Sobre Mi</LiInicio>
+                <span><LiInicio onClick={ApagarDesktop}>Inicio</LiInicio></span>
+                <LiInicio onClick={AbrirVentanaCorrespondiente}>Sobre mi</LiInicio>
                 <LiInicio>CV</LiInicio>
             </UlIncio>
             <Hora>

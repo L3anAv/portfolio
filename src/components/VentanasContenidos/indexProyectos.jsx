@@ -9,10 +9,9 @@ const ContenedorDeProyectos = styled.div`
     display:flex;
     margin-left:45px;
 
-    div{
-        margin-left:10px;
-        margin-right:10px;
-    }
+    @media (max-width:700px){
+       margin-left:10px;
+      }
 `
 
 export default function indexProyectos() {

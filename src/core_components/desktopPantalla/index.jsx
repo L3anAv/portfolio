@@ -1,3 +1,4 @@
+import "../../crt.css"
 import React from 'react'
 import MenuBar from '../menuBar/index'
 import styled from 'styled-components'
@@ -9,21 +10,17 @@ import darChildrenCorrespondiente from '../../components/VentanasContenidos/inde
 import {useVentanaContext, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 
 const Contenedor = styled.div`
+  width:100%;
   display: grid;
   overflow:hidden;
   background:#008080;
-  margin:10px 10px 35px 10px;
   grid-template-rows: 1fr 47px;
   animation:BackgroundAnimation 1s infinte;
-  /*background: linear-gradient(163deg, rgba(245,238,200,1) 0%, rgba(167,211,151,1) 100%);*/
 `
 
 const Main = styled.div`
-  display:flex;
   grid-row:1;
-  @media(max-width:820px) and (min-height:700px){
-    transform:translateY(-100px);
-  }
+  display:flex;
 `
 
 const Tierra = styled.img`
@@ -53,7 +50,7 @@ export default function index({consultarSiExiste}) {
 
   return (
     <>
-      <Contenedor>
+      <Contenedor className="crt"> 
         <MenuBar consultarSiExiste={consultarSiExiste}/>
         <Main>
           <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>

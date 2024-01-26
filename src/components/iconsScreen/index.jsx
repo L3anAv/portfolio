@@ -16,7 +16,7 @@ const ContenedorIcono = styled.div`
 
 const SobreImg = styled.div`
   top:0px;
-  margin-left:10%;
+  margin-left:15%;
   background:${props => props.background};
   border-radius:${props => props.borderRadius};
 `
@@ -31,7 +31,7 @@ const Img = styled.img`
 `
 
 const NombreIcono = styled.h3`
-  width:130%;
+  width:135%;
   color:#fff;
   border:1.5px;
   margin-top:5px;
@@ -58,7 +58,7 @@ export default function iconos({src, nombreIcono, width, height, decirQuienSoy, 
   useEffect(() => {
     fuiClikeado()
   }, [nombreDelClikeado])
-  
+
   // Encargado de ejecutar las tareas del componente
   function ejecutarTareas(){
     decirQuienSoy(nombreIcono)
@@ -67,7 +67,7 @@ export default function iconos({src, nombreIcono, width, height, decirQuienSoy, 
   return (
     <ContenedorIcono
     onClick={ejecutarTareas}
-    onDoubleClick={() => cambiarEstadoVentana(true)}
+    onDoubleClick={(e) => {e.stopPropagation(); cambiarEstadoVentana(true);}}
     >
       <SobreImg
       width={width}
@@ -78,7 +78,7 @@ export default function iconos({src, nombreIcono, width, height, decirQuienSoy, 
       height={height}
       grayscale={clickSobreIcono ? '70%' : '0%'}
       padding={nombreIcono == "Browser" ? '1px' : ''}
-      marginLeft={nombreIcono == "Browser" ? '6px': nombreIcono == "Archivo.txt" ? '10px;' : '2px'}/>
+      marginLeft={nombreIcono == "Browser" ? '4px': nombreIcono == "Archivo.txt" ? '12px;' : '2px'}/>
       </SobreImg>
       <NombreIcono
       color={clickSobreIcono ? '#000' : '#fff'}

@@ -1,26 +1,21 @@
+import "../../crt.css"
 import styled from 'styled-components'
+import {colorVentana} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
 import FotoPerf from '../../assets/images/sho.jpg'
-import {colorVentana, colorContraste} from '../../utils/theme'
 
 const PantallaCarga = styled.div`
-
-    margin:20px;
     padding:10px;
     grid-row:1;
     color:#ffffff;
-    border-radius:25px;
     background:#000000;
 `
 
 const Container = styled.div`
-    margin:20px;
-    display:grid;
     padding:10px;
-    border-radius:25px;
-    background: rgb(245,238,200);
+    display:grid;
+    background:#008080;
     grid-column-template:1fr 50% 1fr;
-    background: linear-gradient(163deg, rgba(245,238,200,1) 0%, rgba(167,211,151,1) 100%); 
 `
 
 const ContainerInicio = styled.div`
@@ -31,22 +26,30 @@ const ContainerInicio = styled.div`
 `
 
 const BotonIniciarSs = styled.button`
-    weigth:800;
-    height:50px;
     width:210px;
+    height:50px;
+
+    font-family:MonosSpace;
+    border-top:3px solid white;
+    border-left:4px solid white;
+    border-right:5px solid #808080;
+    border-bottom:3px solid #808080;
+
     padding:10px;
-    font-size:18px;
+    font-size:15px;
     margin-top:20px;
-    transition:all 1s;
-    border-radius:10px;
-    font-family:DaysOne;
-    color:${colorContraste};
+
+    color:#000;
+
+    cursor: url("/src/assets/cursor/cursor-old.png"), default;
+    
     background:${colorVentana};
 
-    :hover{
-        cursor:pointer;
-        color:${colorVentana};
-        background:${colorContraste};
+    :active{
+        border-bottom:2px solid white;
+        border-right:2px solid white;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
     }
 `
 
@@ -54,12 +57,6 @@ const FotoPerfil = styled.img`
     width:200px;
     margin-top:20%;
     margin-bottom:30px;
-    border-radius:100px;
-
-    :hover{
-        transform:scale(1.2);
-        transition:transform 1s;
-    }
 `
 
 export default function pantallaInicio({IrAlDesktop}) {
@@ -131,7 +128,7 @@ export default function pantallaInicio({IrAlDesktop}) {
 
   if(mostrarInicio){
     return(
-        <Container>
+        <Container className="crt">
             <ContainerInicio>
                 <FotoPerfil src={FotoPerf} />
                 <BotonIniciarSs onClick={IrAlDesktop}>Iniciar Sesion</BotonIniciarSs>
@@ -141,7 +138,7 @@ export default function pantallaInicio({IrAlDesktop}) {
   }else{
     return (
         <>
-        <PantallaCarga>
+        <PantallaCarga className="crt">
         {
         lines.map((line, index) => (
           <div key={index} className="line">{line}</div>

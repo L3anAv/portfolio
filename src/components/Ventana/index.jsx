@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import {colorVentana, colorContraste} from '../../utils/theme'
+import {colorContraste} from '../../utils/theme'
 import {useVentanaContext, useCambioDeEstadoVentana, useGetContenidoVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 
 const Ventana = styled.div`
     overflow:hidden;
     position:absolute;
-    outline:3px solid black;
+    outline:3px solid #c9ccc7;
     top:${props => props.top};
     left:${props => props.left};
     background:${colorContraste};
@@ -18,7 +18,7 @@ const Ventana = styled.div`
 
 const ContenidoVentana = styled.div`
     width:100%;
-    height:93%;
+    height: 88%;
     overflow:${props => props.overflow};
 `
 
@@ -65,6 +65,22 @@ const Img = styled.img`
     transform:scale(0.5);
 `
 
+const BarraInferior = styled.div`
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 99.3%;
+  background: #c9ccc7;
+  display: flex;
+  
+  border-top:2px solid #808080;
+  border-left:4px solid white;
+  border-right:4px solid white;
+  border-bottom:4px solid #808080;
+
+`
+
 export default function ventanaContenido({ImgParametro}) {
     
     const Contenido = useGetContenidoVentana()
@@ -83,13 +99,6 @@ export default function ventanaContenido({ImgParametro}) {
         : setMaximizarVentana(false)
     }
 
-    /*
-    function overflowActividad(){
-        return titleVentana == nombreIcono[1]
-        ? setOverflow(false)
-        : setOverflow(true)
-    }
-    */
     function ejecutarTareasCerrarVentana(){
         setAnimacionCerrar(true)
 
@@ -98,12 +107,6 @@ export default function ventanaContenido({ImgParametro}) {
             cambiarEstadoVentana(false)
         }, 100)
     }
-    
-    /*
-    useEffect(() => {
-        overflowActividad()
-    }, [])
-    */
 
     return (
     <Ventana
@@ -124,8 +127,9 @@ export default function ventanaContenido({ImgParametro}) {
         <ContenidoVentana
          overflow={overflowActive ? 'auto' : 'hidden'}
         >
-            {Contenido}
+         {Contenido}
         </ContenidoVentana>
+        <BarraInferior/>
     </Ventana>
   )
 }

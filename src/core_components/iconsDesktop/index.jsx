@@ -8,7 +8,6 @@ const Contenedor = styled.div`
   display:flex;
   flex-direction:column;
   animation:OpacidadEntrada 1.8s;
-
 `
 
 function index({nombreDelIcono}) {

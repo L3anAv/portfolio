@@ -40,7 +40,7 @@ const Cards = styled.div`
 
 const Demo = styled.a`
     padding:2px;
-    color: #454545;
+    color: #008080;
     font-size:18px;
     cursor: pointer;
     font-family:MonoSpace;
@@ -52,9 +52,7 @@ const Demo = styled.a`
 
     @media(max-width:1132px){
         border:none;
-        color: #555843;
-        font-size:13px;
-        font-weight:900;
+        font-size:15px;
      }
 `
 
@@ -77,6 +75,7 @@ const Topic = styled.div`
     p{
         margin-top:8px;
         font-weight:800;
+        color:#05188d;
         margin-bottom:8px;
     }
 

@@ -47,9 +47,10 @@ body{
   -moz-animation: BackgroundAnimation 10s ease infinite;
   -o-animation: BackgroundAnimation 10s ease infinite;
   animation: BackgroundAnimation 10s ease infinite;
-
+ 
   cursor: url("/src/assets/cursor/cursor-old.png"), default;
 }
+
 
 .loader, .loader:before, .loader:after {
   border-radius: 50%;
