@@ -11,7 +11,7 @@ import ContextVentanaProvider from './contexts/ventanaContext'
 */
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  
+
   <React.StrictMode>
     <ContextVentanaProvider>
       <Router>

@@ -6,6 +6,7 @@ import {useVentanaContext, useCambioDeEstadoVentana, useGetContenidoVentana, use
 const Ventana = styled.div`
     overflow:hidden;
     position:absolute;
+    z-index:1;
     outline:3px solid #c9ccc7;
     top:${props => props.top};
     left:${props => props.left};

@@ -5,6 +5,7 @@ import {useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana} f
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
 const NavBar = styled.nav`
+    width:100%;
     color:#000;
     grid-row:2;
     height:40px;
@@ -12,7 +13,15 @@ const NavBar = styled.nav`
     font-weight: bold;
     border:3px solid white;
     background:${colorBarraMenu};
-    justify-content:space-between;    
+    justify-content:space-between;
+
+    @media (max-height:600px){
+        grid-row:1;
+    }
+
+    @media (max-width:400px){
+        width:85%;
+    }
 `
 
 const UlIncio = styled.ul`

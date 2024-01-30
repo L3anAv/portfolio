@@ -30,6 +30,11 @@
   src: url('/public/fonts/DaysOne-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family:Zimra;
+  src: url('/public/fonts/Zimra-Regular.otf') format('truetype');
+}
+
 
 /* Estilos generales -> */
 * {
@@ -49,6 +54,10 @@ body{
   animation: BackgroundAnimation 10s ease infinite;
  
   cursor: url("/src/assets/cursor/cursor-old.png"), default;
+}
+
+a{
+  all: unset;
 }
 
 
