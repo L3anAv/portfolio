@@ -1,6 +1,7 @@
 import "./index.css"
 import Desktop from './Desktop'
 import styled from 'styled-components'
+import SunGIF from './assets/images/sun.gif'
 import React, { useState, useEffect} from 'react'
 import Inicio from './core_components/index/index'
 import {useCambioDeEstadoVentana, useVentanaContext} from './contexts/ventanaContext'
@@ -24,19 +25,20 @@ const Contenedor = styled.div`
 `
 
 const SloganContainer = styled.div`
+  
   margin:0;
   padding:0;
   grid-row:1;
   display:flex;
   grid-column:2;
-  height: 100vh;
+  height:100vh;
   position:relative;
   align-items:center;
   transform:scale(0.9);
   flex-direction:column;
   justify-content: center;
   background-color:${props => props.bakgroundSlogan};
-
+  
   p{
     letter-spacing:8px;
   }
@@ -52,6 +54,11 @@ const SloganContainer = styled.div`
   }
 
   @media (max-width:1132px){
+
+    p{
+      letter-spacing:3px;
+    }
+
     img{
       display:none;
     }
@@ -66,9 +73,9 @@ const Slogan = styled.p`
   display: ${props => props.displaySlogan};
   
   text-shadow:
-    2px 0 #0033db, -2px 0 #0033db, 0 2px #0033db, 0 -2px #0033db,
-    1px 1px #0033db, -1px -1px #0033db, 1px -1px #0033db, -1px 1px #0033db;
-  
+  2px 0 #0033db, -2px 0 #0033db, 0 2px #0033db, 0 -2px #0033db,
+  1px 1px #0033db, -1px -1px #0033db, 1px -1px #0033db, -1px 1px #0033db;
+
   background-image:
   linear-gradient(to right, #dddddd 2px, transparent 2px),
   linear-gradient(to bottom, #dddddd 2px, transparent 2px);
@@ -77,7 +84,7 @@ const Slogan = styled.p`
 
   user-select:none;
   font-family:Zimra;
-  font-size: clamp(3.4375rem, 2.8588rem + 3.0864vw, 6.5625rem);
+  font-size: clamp(2.1875rem, 1.3773rem + 4.321vw, 6.5625rem);
 
   text-shadow:${props => props.mostrarInicio 
   ? `none`
@@ -91,28 +98,42 @@ const Slogan = styled.p`
     0 0 151px #0762bc;`}
 
   @media (max-width:1132px){
+    
     grid-row:1;
     grid-column:1;
     text-shadow:none;
+    margin-left:5px;
+
+    background-image:none;
+    background-size: none;
+    background-position: none;
   }
 
-  @media (max-height:600px){
-    opacity:50%;
-  }
 `
 
 const Boton = styled.button`
   position:absolute;
   width:60%;
-  bottom:50px;
   height:8%;
   grid-row:1;
-  color:white;
+  bottom:50px;
+  color:black;
   margin-left:30px;
-  background:none;
-  border-radius:25px;
-  border:1px solid white;
+  outline:1px solid black;
+  border-top:2px solid white;
+  border-left:2px solid white;
+  border-right:2px solid #c1c1c1;
+  border-bottom:2px solid #c1c1c1;
   font-size: clamp(0.875rem, 0.713rem + 0.8642vw, 1.75rem);
+
+  
+  :active{
+    border-top:2px solid #c1c1c1;
+    border-left:2px solid #c1c1c1; 
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+  }
+  
 
   :hover{
     cursor: url("/src/assets/cursor/pointer-old.png"), default;
@@ -196,8 +217,8 @@ export default function App() {
   return (
     <>
       <Contenedor mostrarInicio={mostrarInicio}>
-        <SloganContainer bakgroundSlogan={mostrarInicio ? '#bafb11' : 'none'}>
-        {mostrarInicio ? '' : <img src={"src/assets/images/sun.gif"}/>}
+        <SloganContainer bakgroundSlogan={mostrarInicio && windowSize > 1132 ? '#bafb11' : 'none'}>
+        {mostrarInicio ? '' : <img src={SunGIF}/>}
         <Slogan mostrarInicio={mostrarInicio} displaySlogan={displaySlogan}>
           Diseño y Desarollo el sitio web que te ayude a alcanzar tus objetivos de negocio.
         </Slogan>

@@ -15,7 +15,7 @@ const NavBar = styled.nav`
     background:${colorBarraMenu};
     justify-content:space-between;
 
-    @media (max-height:600px){
+    @media (max-width:600px){
         grid-row:1;
     }
 
@@ -25,6 +25,7 @@ const NavBar = styled.nav`
 `
 
 const UlIncio = styled.ul`
+    width:60%;
     display:flex;
     position:relative;
 
@@ -35,6 +36,11 @@ const UlIncio = styled.ul`
         border-right:2px solid white;
     }
 
+    li:nth-child(2){
+        width:25%;
+        padding-left:9%;
+    }
+
     @media(max-width:820px){
         margin-left:0;
     }
@@ -42,6 +48,7 @@ const UlIncio = styled.ul`
 `
 
 const LiInicio = styled.li`
+    
     margin:5px;
     font-size:12px;
     padding-top:2px;
@@ -120,8 +127,7 @@ export default function index({consultarSiExiste}) {
         <NavBar>
             <UlIncio>
                 <span><LiInicio onClick={ApagarDesktop}>Inicio</LiInicio></span>
-                <LiInicio onClick={AbrirVentanaCorrespondiente}>Sobre mi</LiInicio>
-                <LiInicio>CV</LiInicio>
+                <LiInicio onClick={AbrirVentanaCorrespondiente}>Sobre Mi</LiInicio>
             </UlIncio>
             <Hora>
                 {hora}

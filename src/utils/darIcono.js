@@ -15,6 +15,6 @@ export default function darIconoCorrespondiente(nombre){
       case nombreIcono[3]:
         return `${ArchiveIcon}`
       case "Sobre Mi":
-        return;
+        return `${BrowserIcon}`
     }
 }

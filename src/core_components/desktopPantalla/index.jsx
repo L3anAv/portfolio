@@ -17,7 +17,7 @@ const Contenedor = styled.div`
   grid-template-rows: 1fr 47px;
   animation:BackgroundAnimation 1s infinte;
 
-  @media (max-height:600px){
+  @media (max-width:600px){
     grid-template-rows:47px 1fr;
   }
 `
@@ -26,7 +26,7 @@ const Main = styled.div`
   grid-row:1;
   display:flex;
 
-  @media (max-height:600px){
+  @media (max-width:600px){
     grid-row:2;
   }
 `

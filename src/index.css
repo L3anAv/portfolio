@@ -35,6 +35,10 @@
   src: url('/public/fonts/Zimra-Regular.otf') format('truetype');
 }
 
+@font-face {
+  font-family:Linkedin;
+  src: url('/public/fonts/similar-linkedin.ttf') format('truetype');
+}
 
 /* Estilos generales -> */
 * {
