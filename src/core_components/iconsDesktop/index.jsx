@@ -25,8 +25,8 @@ function index({nombreDelIcono}) {
     <Contenedor>
       <Icono src={darIconoCorrespondiente(nombreIcono[0])} decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={nombreIcono[0]} width={'60px'} height={'auto'}/>
       <Icono src={darIconoCorrespondiente(nombreIcono[0])}  decirQuienSoy={decirQueIconoQuienSoy}nombreDelClikeado={nombreDelClikeado} nombreIcono={nombreIcono[1]} width={'60px'} height={'auto'}/>
+      <Icono src={darIconoCorrespondiente(nombreIcono[0])}  decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={nombreIcono[3]} width={'60px'} height={'auto'}/>
       <Icono src={darIconoCorrespondiente(nombreIcono[2])}  decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={nombreIcono[2]} width={'55px'} height={'auto'}/>
-      <Icono src={darIconoCorrespondiente(nombreIcono[3])}  decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={nombreIcono[3]} width={'50px'} height={'auto'}/>
     </Contenedor>
   )
 }

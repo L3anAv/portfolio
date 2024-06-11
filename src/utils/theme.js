@@ -1,4 +1,3 @@
-
 const colorIconos = "#0000000"
 const colorVentana = "#8f8f8f"
 const colorContraste = "#FFFFFF"

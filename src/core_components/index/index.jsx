@@ -293,8 +293,8 @@ function inicio({consultarSiExiste}) {
           <Footer>
             
             <ContenedorImagenes>
-              {[...Array(cantidadRepeticiones)].map((index) => (
-              <ImagenRepetida key={index} src={Triangulo}  alt="Imagen repetida" />
+              {[...Array(cantidadRepeticiones)].map((_, index) => (
+              <ImagenRepetida key={`imagen-${index}`} src={Triangulo}  alt="Imagen repetida" />
               ))}
             </ContenedorImagenes>
 

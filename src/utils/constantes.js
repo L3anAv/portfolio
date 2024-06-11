@@ -1,3 +1,3 @@
-const nombreIcono = ["Proyectos", "Imagenes", "Browser", "Archivo.txt"]
+const nombreIcono = ["Proyectos", "Imagenes", "Browser", "Articulos"]
 
 export {nombreIcono}

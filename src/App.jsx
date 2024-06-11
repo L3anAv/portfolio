@@ -1,7 +1,6 @@
 import "./index.css"
 import Desktop from './Desktop'
 import styled from 'styled-components'
-import SunGIF from './assets/images/sun.gif'
 import React, { useState, useEffect} from 'react'
 import Inicio from './core_components/index/index'
 import {useCambioDeEstadoVentana, useVentanaContext} from './contexts/ventanaContext'
@@ -16,8 +15,7 @@ const Contenedor = styled.div`
       props.mostrarInicio
         ? '#dddddd'
         : '#0728dd'};
-    transition:background 1s;
-
+    
     @media (max-width:1132px){
       grid-template-row: 1fr 1fr;
       grid-template-columns: 1fr;
@@ -218,7 +216,6 @@ export default function App() {
     <>
       <Contenedor mostrarInicio={mostrarInicio}>
         <SloganContainer bakgroundSlogan={mostrarInicio && windowSize > 1132 ? '#bafb11' : 'none'}>
-        {mostrarInicio ? '' : <img src={SunGIF}/>}
         <Slogan mostrarInicio={mostrarInicio} displaySlogan={displaySlogan}>
           Diseño y Desarollo el sitio web que te ayude a alcanzar tus objetivos de negocio.
         </Slogan>

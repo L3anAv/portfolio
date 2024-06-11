@@ -1,7 +1,7 @@
 import {nombreIcono} from './constantes'
 import ImgIcons from '../assets/iconos/img.png'
 import ArchiveIcon from '../assets/iconos/archive.png'
-import BrowserIcon from '../assets/iconos/browser.png'
+import BrowserIcon from '../assets/iconos/browser-2.png'
 import ProjectIcons from '../assets/iconos/folder.png'
 
 export default function darIconoCorrespondiente(nombre){

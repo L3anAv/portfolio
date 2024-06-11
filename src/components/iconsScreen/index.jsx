@@ -78,7 +78,7 @@ export default function iconos({src, nombreIcono, width, height, decirQuienSoy, 
       height={height}
       grayscale={clickSobreIcono ? '70%' : '0%'}
       padding={nombreIcono == "Browser" ? '1px' : ''}
-      marginLeft={nombreIcono == "Browser" ? '4px': nombreIcono == "Archivo.txt" ? '12px;' : '2px'}/>
+      marginLeft={nombreIcono == "Browser" ? '5px': '2px'}/>
       </SobreImg>
       <NombreIcono
       color={clickSobreIcono ? '#000' : '#fff'}

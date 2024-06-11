@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import IconsDesktopBar from '../iconsDesktop/index'
 import Ventana from '../../components/Ventana/index'
 import darIconoCorrespondiente  from '../../utils/darIcono'
-import TierraGIF from '../../assets/images/output-onlinegiftools-2.gif'
+import CloudWallpaper from '../../assets/images/wallpaper.png'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 import {useVentanaContext, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
 
@@ -13,9 +13,8 @@ const Contenedor = styled.div`
   width:100%;
   display: grid;
   overflow:hidden;
-  background:#008080;
   grid-template-rows: 1fr 47px;
-  animation:BackgroundAnimation 1s infinte;
+  background:#548cc4;
 
   @media (max-width:600px){
     grid-template-rows:47px 1fr;
@@ -28,17 +27,6 @@ const Main = styled.div`
 
   @media (max-width:600px){
     grid-row:2;
-  }
-`
-
-const Tierra = styled.img`
-
-  object-fit: scale-down;
-  animation:OpacidadEntrada 1.5s;
-  transform:translate(120px, 0px);
-
-  @media(max-width:820px){
-    transform:translateX(120px);
   }
 `
 
@@ -58,11 +46,10 @@ export default function index({consultarSiExiste}) {
 
   return (
     <>
-      <Contenedor className="crt"> 
+      <Contenedor className="crt">
         <MenuBar consultarSiExiste={consultarSiExiste}/>
         <Main>
           <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
-          <Tierra src={TierraGIF} />
         </Main>
         {estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(TituloDeLaVentana)}/>}
       </Contenedor>

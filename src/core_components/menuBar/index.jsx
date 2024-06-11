@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import {colorBarraMenu,} from '../../utils/theme'
+import BrowserIcon from '../../assets/iconos/browser-2.png'
 import React, { useState, useEffect } from 'react'
 import {useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
@@ -30,7 +31,7 @@ const UlIncio = styled.ul`
     position:relative;
 
     span{
-        padding-top:0;
+        padding-top:-3px;
         margin-left:10px;
         margin-right:10px;
         border-right:2px solid white;
@@ -50,17 +51,26 @@ const UlIncio = styled.ul`
 const LiInicio = styled.li`
     
     margin:5px;
+    display: flex;
     font-size:12px;
-    padding-top:2px;
-    padding-left:8px;
+    padding-top:5px;
+    padding-left:5px;
     user-select:none;
-    padding-right:8px;
+    padding-right:5px;
     padding-bottom:3px;
     font-family:MonosSpace;
     border-top:2px solid white;
     border-left:2px solid white;
     border-right:2px solid #808080;
     border-bottom:2px solid #808080;
+
+     img{
+        width:16px;
+        height:16px;
+        display: block;
+        margin-left:-30%;
+        margin-right:8px;
+    }
 
     :active{
         border-bottom:2px solid white;
@@ -70,8 +80,8 @@ const LiInicio = styled.li`
     }
 
     @media(max-width:820px){
-        font-size:10px;
         margin:6px;
+        font-size:10px;
     }
 
 `
@@ -127,7 +137,7 @@ export default function index({consultarSiExiste}) {
         <NavBar>
             <UlIncio>
                 <span><LiInicio onClick={ApagarDesktop}>Inicio</LiInicio></span>
-                <LiInicio onClick={AbrirVentanaCorrespondiente}>Sobre Mi</LiInicio>
+                <LiInicio onClick={AbrirVentanaCorrespondiente}><img src={BrowserIcon}/>Sobre Mi</LiInicio>
             </UlIncio>
             <Hora>
                 {hora}

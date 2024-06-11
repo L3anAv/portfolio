@@ -70,6 +70,7 @@ const Link = styled.a`
 const Topic = styled.div`
     display:flex;
     font-size:16px;
+    flex-wrap: wrap;
     font-family:MonoSpace;
 
     p{

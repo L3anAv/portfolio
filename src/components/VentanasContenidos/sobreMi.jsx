@@ -127,6 +127,7 @@ const ContenedorSeccionInformacion = styled.div`
     button{
       color:#fff;
       padding:8px;
+      cursor: url("/src/assets/cursor/pointer-old.png"), default;
       margin-top:20px;
       margin-left:30px;
       border-radius:5px;
@@ -144,6 +145,7 @@ const CajaInfoAdicional = styled.div`
   border:2px solid black;
   
   h3{
+    color:#183a59;
     margin-bottom:3px;
     font-size: clamp(0.875rem, 0.7824rem + 0.4938vw, 1.375rem);
   }
@@ -152,7 +154,7 @@ const CajaInfoAdicional = styled.div`
     font-size: clamp(0.875rem, 0.7824rem + 0.4938vw, 1.375rem);
 
     span{
-      color:#bcbcbc;
+      color:#6b84aa;
       padding-right:10px;
       font-size: clamp(0.875rem, 0.8287rem + 0.2469vw, 1.125rem);
     }
@@ -273,7 +275,7 @@ function sobreMi() {
 
         <Textos>
           <H1>Matias Leandro Avila</H1>
-          <Subtitulo>Desarrollador Frontend, con conocimientos en Java.</Subtitulo>
+          <Subtitulo>Desarrollador Frontend</Subtitulo>
         </Textos>
 
       <CajaInfoAdicional>
