@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {colorBarraMenu,} from '../../utils/theme'
-import BrowserIcon from '../../assets/iconos/browser-2.png'
 import React, { useState, useEffect } from 'react'
+import BrowserIcon from '../../assets/iconos/browser.webp'
 import {useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
@@ -9,7 +9,7 @@ const NavBar = styled.nav`
     width:100%;
     color:#000;
     grid-row:2;
-    height:40px;
+    height:42px;
     display:flex;
     font-weight: bold;
     border:3px solid white;
@@ -21,7 +21,7 @@ const NavBar = styled.nav`
     }
 
     @media (max-width:400px){
-        width:85%;
+        width:100%;
     }
 `
 
@@ -43,6 +43,7 @@ const UlIncio = styled.ul`
     }
 
     @media(max-width:820px){
+        width:90%;
         margin-left:0;
     }
 
@@ -95,6 +96,8 @@ const Hora = styled.p`
     border-left:2px solid white;
 
     @media(max-width:820px){
+        padding:2px;
+        font-size:12px;
         margin-left:0;
     }
 `

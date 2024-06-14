@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import PerfilFoto from '../../assets/images/sho.jpg'
+import PerfilFoto from '../../assets/images/sho.webp'
 
 const Contenedor = styled.div`
   display:flex;

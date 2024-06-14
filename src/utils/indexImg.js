@@ -1,6 +1,6 @@
-import Cholet from '../assets/images/cholet.jpg'
-import StarWars from '../assets/images/starWars.jpg'
-import Curuchet from '../assets/images/casa_curutchet.jpg'
+import Cholet from '../assets/images/cholet.webp'
+import StarWars from '../assets/images/starWars.webp'
+import Curuchet from '../assets/images/casa_curutchet.webp'
 
 const Imagenes = [Cholet, StarWars, Curuchet]
 const nombresImagenes = ["Cholet", "StarWars", "Curuchet"]

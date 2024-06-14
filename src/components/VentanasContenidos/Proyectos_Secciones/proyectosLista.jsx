@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Carga from '../../loading/index'
 import {colorVentana} from '../../../utils/theme'
-import Arrow from '../../../assets/iconos/arrow.png'
+import Arrow from '../../../assets/iconos/arrow.webp'
 import {nombreIcono} from '../../../utils/constantes'
 import useDataGithub from '../../../Hooks/useDataGithub'
 import {useSetContenidoVentana} from '../../../contexts/ventanaContext'
@@ -121,7 +121,7 @@ export default function proyectosLista({ClaveTopic}) {
                 return (
                     <Cards key={item.id}>
                         <Link href={item.html_url}>{item.name}</Link>
-                            {item.homepage != '' ? <p><Demo href={item.homepage}>Demo: <span>{item.homepage}</span></Demo></p> : ''}
+                            {item.homepage != '' ? <p><Demo href={item.homepage} target="_blank">{item.topics.includes("web") ? `Web:` : 'Demo:'} <span>{item.homepage}</span></Demo></p> : ''}
                             <p>{item.description}</p>
                             <Topic>{item.topics.map((topic, index) => <p key={index}>{topic}</p>)}</Topic>
                     </Cards>

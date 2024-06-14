@@ -2,7 +2,7 @@ import "../../crt.css"
 import styled from 'styled-components'
 import {colorVentana} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
-import FotoPerf from '../../assets/images/sho.jpg'
+import FotoPerf from '../../assets/images/sho.webp'
 
 const PantallaCarga = styled.div`
     padding:10px;
@@ -14,7 +14,7 @@ const PantallaCarga = styled.div`
 const Container = styled.div`
     padding:10px;
     display:grid;
-    background:#008080;
+    background:#5f97e4;
     grid-column-template:1fr 50% 1fr;
 `
 

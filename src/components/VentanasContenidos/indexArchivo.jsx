@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import styled from 'styled-components'
-import Archivo from './../../assets/iconos/archive.png'
-import { colorIconoBackground, colorIconoSelectBack } from '../../utils/theme'
+import Archivo from './../../assets/iconos/archive.webp'
 
 const Iconic = styled.div`
     

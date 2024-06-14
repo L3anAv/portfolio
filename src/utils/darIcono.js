@@ -1,8 +1,8 @@
 import {nombreIcono} from './constantes'
-import ImgIcons from '../assets/iconos/img.png'
-import ArchiveIcon from '../assets/iconos/archive.png'
-import BrowserIcon from '../assets/iconos/browser-2.png'
-import ProjectIcons from '../assets/iconos/folder.png'
+import ImgIcons from '../assets/iconos/img.webp'
+import ArchiveIcon from '../assets/iconos/archive.webp'
+import BrowserIcon from '../assets/iconos/browser.webp'
+import ProjectIcons from '../assets/iconos/folder.webp'
 
 export default function darIconoCorrespondiente(nombre){
     switch (nombre) {
@@ -13,7 +13,7 @@ export default function darIconoCorrespondiente(nombre){
       case nombreIcono[2]:
         return `${BrowserIcon}`
       case nombreIcono[3]:
-        return `${ArchiveIcon}`
+        return `${ProjectIcons}`
       case "Sobre Mi":
         return `${BrowserIcon}`
     }

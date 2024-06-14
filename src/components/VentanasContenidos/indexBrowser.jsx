@@ -2,7 +2,7 @@ import Loader from '../loading/index'
 import styled from 'styled-components'
 import React, { useEffect, useState } from 'react'
 import obtenerIndex from '../../utils/obtenerIndex'
-import Reload from '../../assets/iconos/reload.png'
+import Reload from '../../assets/iconos/reload.webp'
 
 const Contenedor = styled.div`
     display:flex;

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import React, {useState, useEffect} from 'react'
-import Triangulo from '../../assets/images/punta.png'
+import Triangulo from '../../assets/images/punta.webp'
 
 const SeccionUno = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
   div{
     z-index:2;
@@ -14,7 +14,6 @@ flex-direction: column;
 const ReContenedor = styled.div`
 
   display:flex;
-  /*margin-top:90px;*/
   margin-top:15%;
   margin-left:45px;
 
@@ -215,18 +214,26 @@ const LetraCambiante = styled.span`
   
   position:absolute;
   bottom:0;
-  width:52.5%;
-  display:flex;
-  overflow:hidden;
-  background:none;
-  flex-direction:column;
-  background:#6d6d6d;
   z-index:1;
+  width:45%;
+  display:flex;
+  background:none;
+  overflow:hidden;
+  background:#6d6d6d;
+  flex-direction:column;
 
-  @media(max-width:1132px){
-    top:60%;
-    width:100%;
-  }
+    p{
+      color:#fff;
+      font-size:15px;
+      margin-bottom:5px;
+      text-align:center;
+      font-family:Quattrocento;
+    }
+    
+    @media(max-width:1132px){
+      grid-row:3;
+      width:100%;
+    }
 `
 const ContenedorBotones = styled.div`
   
@@ -252,8 +259,13 @@ const ImagenRepetida = styled.img`
 
 function inicio({consultarSiExiste}) {
 
-  const cantidadRepeticiones = 25;
+  const cantidadRepeticiones = 14;
   const [letraBienvenida, setLetraBienvenida] = useState('o');
+
+
+  var fechaActual = new Date();
+  var año = fechaActual.getFullYear();
+  var añoComoString = año.toString();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -303,7 +315,7 @@ function inicio({consultarSiExiste}) {
               <BotonRedes><a href="https://www.linkedin.com/in/l3anav/">[Linkedin]</a></BotonRedes>
               <BotonRedes><a href="https://github.com/l3anav">[GitHub]</a></BotonRedes>
             </ContenedorBotones>
-
+              <p>1996-{añoComoString}</p>
           </Footer>
         </SeccionUno>
   )
