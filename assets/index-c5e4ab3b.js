@@ -175,14 +175,18 @@ div{
 `,xh=N.div`
     flex-direction:column;
 
+    button a{
+      cursor:url("/src/assets/cursor/pointer-old.png");
+    }
+
     button{
       color:#fff;
       padding:8px;
-      cursor: url("/src/assets/cursor/pointer-old.png"), default;
       margin-top:20px;
       margin-left:30px;
       border-radius:5px;
       border:2px solid #4c7396;
+      cursor: url("/src/assets/cursor/pointer-old.png"), pointer;
       background: linear-gradient(0deg, rgba(24,58,89,1) 0%, rgba(76,115,150,1) 100%);
     }
 `,Sh=N.div`
@@ -278,7 +282,7 @@ div{
      height:30%;
    }
 
-`;function Ph(){return M(ph,{children:[d(hh,{children:d(mh,{children:d("p",{children:"https://sobremi.com/@LeandroAvila"})})}),d(gh,{children:M("p",{children:["Sobre ",d("span",{children:"MI"})]})}),M(vh,{children:[d("p",{children:"Inicio"}),d("p",{children:"Perfil"}),d("p",{children:"Contactos"})]}),M(wh,{children:[M(kh,{children:[d(Ih,{src:pc}),d("div",{children:M("ul",{children:[d("li",{children:d("a",{href:"https://www.linkedin.com/in/l3anav/",children:"Ir a Linkedin"})}),d("li",{children:d("a",{href:"https://github.com/l3anav",children:"Ir a GitHub"})}),d("li",{children:d("a",{href:"mailto:leandroav.dev@gmail.com",children:"Enviar un Correo"})})]})})]}),M(xh,{children:[M(Ah,{children:[d(Ch,{children:"Matias Leandro Avila"}),d(Eh,{children:"Desarrollador Frontend"})]}),M(Sh,{children:[d("h3",{children:"Educación"}),M("p",{children:[d("span",{children:"Cursando"})," Técnico universitario en Informática"]}),M("p",{children:[d("span",{children:"Institución"})," Universidad Nacional General Sarmiento"]})]}),d("a",{href:"https://drive.google.com/uc?export=download&id=1d09Mp9Rjrza2lmkLs5x8DpEMVZZ1vrpS",children:d("button",{children:"Curriculum Vitae"})})]})]}),M(yh,{children:[d("div",{children:"Sobre Mi"}),d(Yr,{children:"✨ ¡Hola! 👋🏽👋🏽 Soy Matias Avila, un estudiante de sistemas apasionado por el desarrollo frontend, actualmente me encuentro en la búsqueda de oportunidades laborales en el área. Mi enfoque principal ha sido en el uso de Java, lenguaje que he utilizado durante toda mi trayectoria académica en la universidad."}),d(Yr,{children:"💻 He adquirido mientras, conocimientos en HTML, CSS, JS y posteriormente en React JS. Me siento cómodo trabajando con estas herramientas y he utilizado mis habilidades para crear proyectos web dinámicos. Los cuales puedes ver en la carpeta de Proyectos."}),d(Yr,{children:"🚀 Soy una persona curiosa y apasionada por la resolución de problemas. Cuando me enfrento a un desafío, no me gusta quedarme sin respuestas. Me impulsa el deseo de adquirir nuevos conocimientos y habilidades para superar obstáculos y mejorar continuamente."}),d(Yr,{children:"✉ No dudes en contactarme si deseas saber más sobre mi experiencia o si estás interesado en discutir oportunidades de colaboración. Estoy emocionado por las posibilidades que el mundo del desarrollo tiene para ofrecerme."})]})]})}const Nh=N.div`
+`;function Ph(){return M(ph,{children:[d(hh,{children:d(mh,{children:d("p",{children:"https://sobremi.com/@LeandroAvila"})})}),d(gh,{children:M("p",{children:["Sobre ",d("span",{children:"MI"})]})}),M(vh,{children:[d("p",{children:"Inicio"}),d("p",{children:"Perfil"}),d("p",{children:"Contactos"})]}),M(wh,{children:[M(kh,{children:[d(Ih,{src:pc}),d("div",{children:M("ul",{children:[d("li",{children:d("a",{href:"https://www.linkedin.com/in/l3anav/",children:"Ir a Linkedin"})}),d("li",{children:d("a",{href:"https://github.com/l3anav",children:"Ir a GitHub"})}),d("li",{children:d("a",{href:"mailto:leandroav.dev@gmail.com",children:"Enviar un Correo"})})]})})]}),M(xh,{children:[M(Ah,{children:[d(Ch,{children:"Matias Leandro Avila"}),d(Eh,{children:"Desarrollador Frontend"})]}),M(Sh,{children:[d("h3",{children:"Educación"}),M("p",{children:[d("span",{children:"Cursando"})," Técnico universitario en Informática"]}),M("p",{children:[d("span",{children:"Institución"})," Universidad Nacional General Sarmiento"]})]}),d("button",{children:d("a",{href:"https://drive.google.com/uc?export=download&id=1d09Mp9Rjrza2lmkLs5x8DpEMVZZ1vrpS",children:"Curriculum Vitae"})})]})]}),M(yh,{children:[d("div",{children:"Sobre Mi"}),d(Yr,{children:"✨ ¡Hola! 👋🏽👋🏽 Soy Matias Avila, un estudiante de sistemas apasionado por el desarrollo frontend, actualmente me encuentro en la búsqueda de oportunidades laborales en el área. Mi enfoque principal ha sido en el uso de Java, lenguaje que he utilizado durante toda mi trayectoria académica en la universidad."}),d(Yr,{children:"💻 He adquirido mientras, conocimientos en HTML, CSS, JS y posteriormente en React JS. Me siento cómodo trabajando con estas herramientas y he utilizado mis habilidades para crear proyectos web dinámicos. Los cuales puedes ver en la carpeta de Proyectos."}),d(Yr,{children:"🚀 Soy una persona curiosa y apasionada por la resolución de problemas. Cuando me enfrento a un desafío, no me gusta quedarme sin respuestas. Me impulsa el deseo de adquirir nuevos conocimientos y habilidades para superar obstáculos y mejorar continuamente."}),d(Yr,{children:"✉ No dudes en contactarme si deseas saber más sobre mi experiencia o si estás interesado en discutir oportunidades de colaboración. Estoy emocionado por las posibilidades que el mundo del desarrollo tiene para ofrecerme."})]})]})}const Nh=N.div`
   width:65px;
   height:98px;
   margin:10px;
