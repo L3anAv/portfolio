@@ -13,6 +13,10 @@ export function useVentanaContext(){
     return useContext(VentanaStateContext)
 }
 
+export function useEstaDesplegadaVentana(){
+    return useContext(getEstadoVentana)
+}
+
 export function useCambioDeEstadoVentana(){
     return useContext(CambioDeEstadoVentanaContext)
 }
@@ -35,10 +39,9 @@ export function useGetTituloVentana(){
 
 export function contextVentanaProvider(props){
 
+    const [tituloVentana, settitutloVentana] = useState('')
     const [componenteParaVentana, setComponenteParaVentana] = useState()
     const [ventanaEstaDesplegada, setventanaEstaDesplegada] = useState(false)
-
-    const [tituloVentana, settitutloVentana] = useState('')
 
     function cambioDeEstadoVentana(booleano){
         setventanaEstaDesplegada(booleano)

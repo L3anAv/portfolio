@@ -9,18 +9,19 @@ const Iconic = styled.div`
     margin-top:40px;
     margin-left:30px;
     margin-right:30px;
+    text-align:center;
     flex-direction:column;
 
     p{
       color:#fff;
-      padding:3px;
-      background:#010080;
+      user-select: none;
+      background:${props => props.background};
     }
 `
 
 const ImgIcono = styled.img`
-    width:60px;
-    margin-left:10px;
+    width:35px;
+    margin-left:20px;
     margin-bottom:12px;
     filter: invert(${props => props.invert});
 `
@@ -29,13 +30,23 @@ export default function indexArchivo() {
 
   const [fueClikeado, setFueClikeado] = useState(false)
 
+  const setearProps = () => {
+    if(!fueClikeado){
+    setFueClikeado(true)
+    }else{
+      setFueClikeado(false)
+    }
+  }
+
+  const handleDoubleClick = () => {
+     window.open("https://github.com/L3anAv/frontend-utilidades?tab=readme-ov-file#Indice", "_blank")
+  }
+
   return (
     <>
-      <Iconic onClick={() => {setFueClikeado(true), console.log('Fui clikeado')}}>
-      <a href="https://www.github.com/l3anav" target='_blanck'> 
-      <ImgIcono src={Archivo} invert={fueClikeado ? '20%' : '0%'}/>
-      <p>Recursos.exe</p>
-      </a>
+      <Iconic onClick={setearProps} onDoubleClick={handleDoubleClick} background={fueClikeado ? '#1e40bc' : '#010080'}>
+        <ImgIcono src={Archivo} invert={fueClikeado ? '20%' : '0%'}/>
+        <p>Utilidades-FrontEnd</p>
       </Iconic>
     </>
   )

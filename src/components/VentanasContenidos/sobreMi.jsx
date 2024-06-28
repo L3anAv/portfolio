@@ -80,30 +80,28 @@ const BarraProfile = styled.div`
   }
 `
 
-const SobreMi = styled.div`
-  
-div{
+const Seccion = styled.div`
     heigth:10px;
     font-family:Zimra;
     padding-top:5px;
     padding-bottom:5px;
     padding-left:10px;
-    background:#a6bedd;
+    background:#007bb6;
     margin-left:20px;
     margin-right:20px;
-    color:#5f97e4;
-  }
-
+    margin-bottom:10px;
+    color:#fff;
+    
 `
 
 const Texto = styled.p`
-  margin-top:10px;
+  margin-top:8px;
   margin-left:35px;
   margin-right:35px;
-  margin-bottom:20px;
+  margin-bottom:10px;
   font-family:Zimra;
   text-aling:justify;
-  font-size: clamp(0.875rem, 0.7477rem + 0.679vw, 1.5625rem);
+  font-size: clamp(0.875rem, 0.7824rem + 0.4938vw, 1.375rem);
 `
 
 const ContenedorSuperior = styled.div`
@@ -124,14 +122,18 @@ const ContenedorSuperior = styled.div`
 const ContenedorSeccionInformacion = styled.div`
     flex-direction:column;
 
+    button a{
+      cursor:url("/src/assets/cursor/pointer-old.png");
+    }
+
     button{
       color:#fff;
       padding:8px;
-      cursor: url("/src/assets/cursor/pointer-old.png"), default;
       margin-top:20px;
       margin-left:30px;
       border-radius:5px;
       border:2px solid #4c7396;
+      cursor: url("/src/assets/cursor/pointer-old.png"), pointer;
       background: linear-gradient(0deg, rgba(24,58,89,1) 0%, rgba(76,115,150,1) 100%);
     }
 `
@@ -241,6 +243,95 @@ const Img = styled.img`
 
 `
 
+const ExperienciaContainer = styled.div`
+
+  width: calc(100%-30px);
+  display:flex;
+  margin-left:30px;
+  flex-direction:row;
+
+`
+
+const LineaTiempo = styled.span`
+  height: 180px; 
+  position: relative;
+
+  ::before {
+    content: "";
+    display: block; 
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%); 
+    height: 100%; 
+    border-left: 2px solid #0749a5; 
+    width: 0;
+  }
+
+  @media(max-width:1132px){
+     height: 250px;
+   }
+`
+
+const RomboExperiencia = styled.span`
+    color:#0749a5;
+    font-size:15px;
+    margin-left:-6.5px;
+  
+`
+const DetalleExperiencia = styled.div`
+    display:flex;
+    text-align:left;
+    margin-left:10px;
+    flex-direction:column;
+    
+    ol{
+      margin-top:8px;
+      margin-left:18px;
+    }
+
+    li{
+      list-style-type: square;
+    }
+
+    p{
+      font-size: clamp(0.875rem, 0.7824rem + 0.4938vw, 1.375rem);
+
+      :nth-child(1){
+        font-size: clamp(0.75rem, 0.7153rem + 0.1852vw, 0.9375rem);
+      }
+
+      :nth-child(2){
+      
+        font-weight: bold;
+        font-size: clamp(1rem, 0.9306rem + 0.3704vw, 1.375rem);
+
+        a{
+          color:#0749a5;
+          font-weight: none;
+          text-decoration:underline;
+          cursor: url("/src/assets/cursor/pointer-old.png"), pointer;
+        }
+      }
+
+      :nth-child(3){
+       margin-bottom:8px;
+       font-size: clamp(0.75rem, 0.7037rem + 0.2469vw, 1rem);
+      }
+
+      :nth-child(4){
+       font-size: clamp(0.75rem, 0.6574rem + 0.4938vw, 1.25rem);
+      }
+    }
+
+  @media(max-width:1132px){
+     ol{
+      margin-bottom:10px;
+     }
+   }
+`
+
+
 function sobreMi() {
   return (
     <Contenedor>
@@ -256,7 +347,6 @@ function sobreMi() {
     <BarraProfile>
       <p>Inicio</p>
       <p>Perfil</p>
-      <p>Contactos</p>
     </BarraProfile>
 
     <ContenedorSuperior>
@@ -285,18 +375,59 @@ function sobreMi() {
         <p><span>Institución</span> Universidad Nacional General Sarmiento</p>
       </CajaInfoAdicional>
 
-      <a href="https://drive.google.com/uc?export=download&id=1d09Mp9Rjrza2lmkLs5x8DpEMVZZ1vrpS"><button>Curriculum Vitae</button></a>
+      <button><a href="https://drive.google.com/uc?export=download&id=1d09Mp9Rjrza2lmkLs5x8DpEMVZZ1vrpS">Curriculum Vitae</a></button>
     </ContenedorSeccionInformacion>
     
     </ContenedorSuperior>
     
-    <SobreMi>
-    <div>Sobre Mi</div>
-    <Texto>✨ ¡Hola! 👋🏽👋🏽 Soy Matias Avila, un estudiante de sistemas apasionado por el desarrollo frontend, actualmente me encuentro en la búsqueda de oportunidades laborales en el área. Mi enfoque principal ha sido en el uso de Java, lenguaje que he utilizado durante toda mi trayectoria académica en la universidad.</Texto>
-    <Texto>💻 He adquirido mientras, conocimientos en HTML, CSS, JS y posteriormente en React JS. Me siento cómodo trabajando con estas herramientas y he utilizado mis habilidades para crear proyectos web dinámicos. Los cuales puedes ver en la carpeta de Proyectos.</Texto>
+
+    <Seccion>Sobre Mi</Seccion>
+
+    <Texto>✨ ¡Hola! 👋🏽👋🏽 Soy Matias Avila, un estudiante de sistemas apasionado por el desarrollo frontend, actualmente me encuentro en la búsqueda de oportunidades laborales en el área. He aprendido HTML, CSS, Js y por útilmo ReactJs.</Texto>
     <Texto>🚀 Soy una persona curiosa y apasionada por la resolución de problemas. Cuando me enfrento a un desafío, no me gusta quedarme sin respuestas. Me impulsa el deseo de adquirir nuevos conocimientos y habilidades para superar obstáculos y mejorar continuamente.</Texto>
     <Texto>✉ No dudes en contactarme si deseas saber más sobre mi experiencia o si estás interesado en discutir oportunidades de colaboración. Estoy emocionado por las posibilidades que el mundo del desarrollo tiene para ofrecerme.</Texto>
-    </SobreMi>
+
+    <Seccion>Experiencia</Seccion>
+    
+    
+    <ExperienciaContainer>
+      <LineaTiempo/>
+      <RomboExperiencia>⬤</RomboExperiencia>
+
+      <DetalleExperiencia>
+      <p>mayo 2024 - Actualidad</p>
+      <p>Desarollador Frontend Colaborador | <a href="https://goldendoglinux.org/" target='_blanck'>Web</a></p>
+      <p>GoldenDog Linux (Proyecto Open Source) \ Tecnología usada: Jekyll</p>
+      
+      <p>Tareas Realizadas:</p>
+      <ol>
+        <li>Añadir una sección de documentación.</li>
+        <li>Corrección de errores varios, y reestructuración.</li>
+        <li>Añadir imágenes de proyectos con los cuales se colabora en el footer de la web.</li>
+      </ol>
+      </DetalleExperiencia>
+    </ExperienciaContainer>
+
+    <ExperienciaContainer>
+      <LineaTiempo/>
+      <RomboExperiencia>⬤</RomboExperiencia>
+
+      <DetalleExperiencia>
+      <p>dic. 2022 - abr. 2023</p>
+      <p>Desarollador Frontend Freelance | <a href="https://adcargentina.com/" target='_blanck'>Web</a></p>
+      <p>ADC ARGENTINA UNIENDO EMPRESAS SA (Buenos Aires) \ Tecnología usada: ReactJS</p>
+      <p>Tareas Realizadas:</p>
+      <ol>
+        <li>Desarrollo con ReactJS.</li>
+        <li>Configuración del dominio.</li>
+        <li>Diseño de maquetas de UI con Penpot.</li>
+        <li>Organización de reuniones para extracción de requerimientos, y luego para feedback.</li>
+      </ol>
+      </DetalleExperiencia>
+    </ExperienciaContainer>
+
+    
+
     </Contenedor>
   )
 }

@@ -7,7 +7,8 @@ import Ventana from '../../components/Ventana/index'
 import darIconoCorrespondiente  from '../../utils/darIcono'
 import CloudWallpaper from "../../assets/images/background.webp"
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
-import {useVentanaContext, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
+import {useVentanaContext,useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
+import { useEffect } from "react"
 
 const Contenedor = styled.div`
   width:100%;
@@ -26,11 +27,23 @@ const Contenedor = styled.div`
 
 export default function index({consultarSiExiste}) {
 
-  const estadoVentana = useVentanaContext()
+  
   const setTituloVentana = useSetTituloVentana()
   const TituloDeLaVentana = useGetTituloVentana()
-
+  const estadoVentanaActual = useVentanaContext()
+  const estadoVentana = useCambioDeEstadoVentana()
   const contenidoParaVentana = useSetContenidoVentana()
+
+  function AbrirVentanaCorrespondiente(){
+    estadoVentana(true)
+    setTituloVentana("Sobre Mi")
+    contenidoParaVentana(darChildrenCorrespondiente("Sobre Mi"))
+  }
+
+  useEffect(() => {
+    AbrirVentanaCorrespondiente()
+  }, [])
+  
 
   function nombreDelIcono(nombre){
     setTituloVentana(nombre)
@@ -44,7 +57,7 @@ export default function index({consultarSiExiste}) {
         <MenuBar consultarSiExiste={consultarSiExiste}/>
         <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
       </Contenedor>
-      {estadoVentana && <Ventana ImgParametro={darIconoCorrespondiente(TituloDeLaVentana)}/>}
+      {estadoVentanaActual && <Ventana ImgParametro={darIconoCorrespondiente(TituloDeLaVentana)}/>}
     </>
   )
 

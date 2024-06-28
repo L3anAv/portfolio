@@ -111,8 +111,8 @@ export default function ventanaContenido({ImgParametro}) {
 
     return (
     <Ventana
-    top={maximizarVentana ? '0' : '90px'}
-    left={maximizarVentana ? '0' : '10%'}
+    top={maximizarVentana ? '0' : '55px'}
+    left={maximizarVentana ? '0' : '12%'}
     width={maximizarVentana ? '99.9%' : '75%'}
     height={maximizarVentana ? '99.8%' : '75%'}
     display={valorEstadoVentana ? 'inline-block' : 'none'}

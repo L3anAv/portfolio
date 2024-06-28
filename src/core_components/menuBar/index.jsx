@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {colorBarraMenu,} from '../../utils/theme'
 import React, { useState, useEffect } from 'react'
 import BrowserIcon from '../../assets/iconos/browser.webp'
-import {useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana} from '../../contexts/ventanaContext'
+import {useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana, useVentanaContext, useGetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
 const NavBar = styled.nav`
@@ -60,6 +60,7 @@ const LiInicio = styled.li`
     padding-right:5px;
     padding-bottom:3px;
     font-family:MonosSpace;
+    
     border-top:2px solid white;
     border-left:2px solid white;
     border-right:2px solid #808080;
@@ -72,7 +73,7 @@ const LiInicio = styled.li`
         margin-left:-30%;
         margin-right:8px;
     }
-
+        
     :active{
         border-bottom:2px solid white;
         border-right:2px solid white;
@@ -85,6 +86,13 @@ const LiInicio = styled.li`
         font-size:10px;
     }
 
+`
+
+const LiInicioSobreMi = styled(LiInicio)`
+    border-bottom: ${props => props.ventanaactiva ? '2px solid white' : '2px solid #808080'};
+    border-right: ${props => props.ventanaactiva ? '2px solid white' : '2px solid #808080'};
+    border-left: ${props => props.ventanaactiva ? '2px solid black' : '2px solid white'};
+    border-top: ${props => props.ventanaactiva ? '2px solid black' : '2px solid white'};
 `
 
 const Hora = styled.p`
@@ -104,9 +112,11 @@ const Hora = styled.p`
 
 export default function index({consultarSiExiste}) {
 
+    const estadoVentanaActual = useVentanaContext()
     const setTituloVentana = useSetTituloVentana()
     const estadoVentana = useCambioDeEstadoVentana()
     const contenidoVentana = useSetContenidoVentana()
+    const TituloVentanaActual = useGetTituloVentana()
 
     const [hora, setHora] = useState(new Date().toLocaleTimeString());
 
@@ -119,6 +129,7 @@ export default function index({consultarSiExiste}) {
         clearInterval(intervalId);
         };
     }, []);
+    
 
     function AbrirVentanaCorrespondiente(){
         estadoVentana(true)
@@ -140,7 +151,7 @@ export default function index({consultarSiExiste}) {
         <NavBar>
             <UlIncio>
                 <span><LiInicio onClick={ApagarDesktop}>Inicio</LiInicio></span>
-                <LiInicio onClick={AbrirVentanaCorrespondiente}><img src={BrowserIcon}/>Sobre Mi</LiInicio>
+                <LiInicioSobreMi ventanaactiva={estadoVentanaActual && TituloVentanaActual == "Sobre Mi"} onClick={AbrirVentanaCorrespondiente}><img src={BrowserIcon}/>Sobre Mi</LiInicioSobreMi>
             </UlIncio>
             <Hora>
                 {hora}
