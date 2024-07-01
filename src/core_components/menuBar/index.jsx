@@ -132,9 +132,14 @@ export default function index({consultarSiExiste}) {
     
 
     function AbrirVentanaCorrespondiente(){
-        estadoVentana(true)
-        setTituloVentana("Sobre Mi")
-        contenidoVentana(darChildrenCorrespondiente("Sobre Mi"))
+        if(estadoVentanaActual === false){
+            estadoVentana(true)
+            setTituloVentana("Sobre Mi")
+            contenidoVentana(darChildrenCorrespondiente("Sobre Mi"))
+        }else{
+            estadoVentana(false)
+        }
+        
     }
 
     function ApagarDesktop(){

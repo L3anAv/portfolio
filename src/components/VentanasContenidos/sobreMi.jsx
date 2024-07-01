@@ -328,6 +328,13 @@ const DetalleExperiencia = styled.div`
      ol{
       margin-bottom:10px;
      }
+
+      p{
+        :nth-child(2){
+          margin-left:10px;
+          margin-bottom:8px;
+        }
+      }
    }
 `
 

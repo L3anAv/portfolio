@@ -1,41 +1,13 @@
-import {useState} from 'react'
-import styled from 'styled-components'
+import { useState } from 'react'
 import Archivo from './../../assets/iconos/archive.webp'
-
-const Iconic = styled.div`
-    
-    width:8%;
-    display:flex;
-    margin-top:40px;
-    margin-left:30px;
-    margin-right:30px;
-    text-align:center;
-    flex-direction:column;
-
-    p{
-      color:#fff;
-      user-select: none;
-      background:${props => props.background};
-    }
-`
-
-const ImgIcono = styled.img`
-    width:35px;
-    margin-left:20px;
-    margin-bottom:12px;
-    filter: invert(${props => props.invert});
-`
+import IconoVentana from '../iconoVentana/iconoVentana'
 
 export default function indexArchivo() {
+  const nombreArchivo = "Utilidades FrontEnd"
+  const [nombreDelClikeado, setNombreDelClikeado] = useState('')
 
-  const [fueClikeado, setFueClikeado] = useState(false)
-
-  const setearProps = () => {
-    if(!fueClikeado){
-    setFueClikeado(true)
-    }else{
-      setFueClikeado(false)
-    }
+  function darNombre(nombre){
+    setNombreDelClikeado(nombre)
   }
 
   const handleDoubleClick = () => {
@@ -44,10 +16,7 @@ export default function indexArchivo() {
 
   return (
     <>
-      <Iconic onClick={setearProps} onDoubleClick={handleDoubleClick} background={fueClikeado ? '#1e40bc' : '#010080'}>
-        <ImgIcono src={Archivo} invert={fueClikeado ? '20%' : '0%'}/>
-        <p>Utilidades-FrontEnd</p>
-      </Iconic>
+      <IconoVentana darNombre={darNombre} FuiClikeado={nombreArchivo === nombreDelClikeado} nombreIcono={nombreArchivo} imgIcono={Archivo} widthImg={"35px"} marginLeftImg={"20px"} handleDoubleClick={handleDoubleClick}/>
     </>
   )
 }
