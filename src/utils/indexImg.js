@@ -11,7 +11,7 @@ import FlixNetV2Web from '../assets/images/WebFlixnetV2.webp'
 import MaquetaArq from '../assets/images/MaquetaEstudioArq.webp'
 
 const Imagenes = [Cholet, StarWars, Curuchet, AdcWebMaqueta, PortafolioV1, PortafolioV2, MaquetaArq, AsciiDoc, SpaFlixnet, FlixNetV2Mob, FlixNetV2Web]
-const nombresImagenes = ["Cholet", "StarWars", "Curuchet", "AdcWebMaqueta", "PortafolioV1", "PortafolioV2", "MaquetaArq", "AsciiDoc", "SpaFlixnet", "FlixNetMobile", "FlixNetV2"]
+const nombresImagenes = ["Cholet.png", "StarWars.png", "Curuchet.png", "ADC Web Maqueta", "Portafolio V1", "Portafolio V2", "Maqueta Estudio", "AsciiDoc", "SpaFlixnet", "FlixNet Mobile", "FlixNet Web V2"]
 
 function darImagenCorrespondiente(opcion){
     return Imagenes[darIndexSegunNombreDeImagen(opcion)]

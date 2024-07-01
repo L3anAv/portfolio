@@ -1,16 +1,15 @@
-import { useState } from "react"
 import styled from "styled-components"
 
 const Iconic = styled.div`
     
-    width:8%;
+    
     display:flex;
     margin-top:40px;
-    margin-left:30px;
-    margin-right:30px;
+    margin-left:20px;
+    margin-right:20px;
     text-align:center;
-    flex-direction:column;
     position:relative;
+    flex-direction:column;
 
     p{
       width:100%;
@@ -25,6 +24,8 @@ const ImgIconoVentana = styled.img`
     height:${props => props.height};
     object-fit:cover;
     margin-bottom:8px;
+    margin-left:20px;
+    margin-right:20px;
     margin-left:${props => props.marginLeft};
     filter: invert(${props => props.invert});
 `
