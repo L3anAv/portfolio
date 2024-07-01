@@ -370,14 +370,14 @@ color:#fff;
    }
 `;function Dh(){return R(Sh,{children:[d(kh,{children:d(Ah,{children:d("p",{children:"https://sobremi.com/@LeandroAvila"})})}),d(Ch,{children:R("p",{children:["Sobre ",d("span",{children:"MI"})]})}),R(Eh,{children:[d("p",{children:"Inicio"}),d("p",{children:"Perfil"})]}),R(Ih,{children:[R(Th,{children:[d(Lh,{src:vc}),d("div",{children:R("ul",{children:[d("li",{children:d("a",{href:"https://www.linkedin.com/in/l3anav/",children:"Ir a Linkedin"})}),d("li",{children:d("a",{href:"https://github.com/l3anav",children:"Ir a GitHub"})}),d("li",{children:d("a",{href:"mailto:leandroav.dev@gmail.com",children:"Enviar un Correo"})})]})})]}),R(Ph,{children:[R(zh,{children:[d(Rh,{children:"Matias Leandro Avila"}),d(Oh,{children:"Desarrollador Frontend"})]}),R(Nh,{children:[d("h3",{children:"Educación"}),R("p",{children:[d("span",{children:"Cursando"})," Técnico universitario en Informática"]}),R("p",{children:[d("span",{children:"Institución"})," Universidad Nacional General Sarmiento"]})]}),d("button",{children:d("a",{href:"https://drive.google.com/uc?export=download&id=1d09Mp9Rjrza2lmkLs5x8DpEMVZZ1vrpS",children:"Curriculum Vitae"})})]})]}),d(Iu,{children:"Sobre Mi"}),d(Li,{children:"✨ ¡Hola! 👋🏽👋🏽 Soy Matias Avila, un estudiante de sistemas apasionado por el desarrollo frontend, actualmente me encuentro en la búsqueda de oportunidades laborales en el área. He aprendido HTML, CSS, Js y por útilmo ReactJs."}),d(Li,{children:"🚀 Soy una persona curiosa y apasionada por la resolución de problemas. Cuando me enfrento a un desafío, no me gusta quedarme sin respuestas. Me impulsa el deseo de adquirir nuevos conocimientos y habilidades para superar obstáculos y mejorar continuamente."}),d(Li,{children:"✉ No dudes en contactarme si deseas saber más sobre mi experiencia o si estás interesado en discutir oportunidades de colaboración. Estoy emocionado por las posibilidades que el mundo del desarrollo tiene para ofrecerme."}),d(Iu,{children:"Experiencia"}),R(Pu,{children:[d(Nu,{}),d(Tu,{children:"⬤"}),R(zu,{children:[d("p",{children:"mayo 2024 - Actualidad"}),R("p",{children:["Desarollador Frontend Colaborador | ",d("a",{href:"https://goldendoglinux.org/",target:"_blanck",children:"Web"})]}),d("p",{children:"GoldenDog Linux (Proyecto Open Source) \\ Tecnología usada: Jekyll"}),d("p",{children:"Tareas Realizadas:"}),R("ol",{children:[d("li",{children:"Añadir una sección de documentación."}),d("li",{children:"Corrección de errores varios, y reestructuración."}),d("li",{children:"Añadir imágenes de proyectos con los cuales se colabora en el footer de la web."})]})]})]}),R(Pu,{children:[d(Nu,{}),d(Tu,{children:"⬤"}),R(zu,{children:[d("p",{children:"dic. 2022 - abr. 2023"}),R("p",{children:["Desarollador Frontend Freelance | ",d("a",{href:"https://adcargentina.com/",target:"_blanck",children:"Web"})]}),d("p",{children:"ADC ARGENTINA UNIENDO EMPRESAS SA (Buenos Aires) \\ Tecnología usada: ReactJS"}),d("p",{children:"Tareas Realizadas:"}),R("ol",{children:[d("li",{children:"Desarrollo con ReactJS."}),d("li",{children:"Configuración del dominio."}),d("li",{children:"Diseño de maquetas de UI con Penpot."}),d("li",{children:"Organización de reuniones para extracción de requerimientos, y luego para feedback."})]})]})]})]})}const Mh=E.div`
     
-    width:8%;
+    
     display:flex;
     margin-top:40px;
-    margin-left:30px;
-    margin-right:30px;
+    margin-left:20px;
+    margin-right:20px;
     text-align:center;
-    flex-direction:column;
     position:relative;
+    flex-direction:column;
 
     p{
       width:100%;
@@ -390,9 +390,11 @@ color:#fff;
     height:${e=>e.height};
     object-fit:cover;
     margin-bottom:8px;
+    margin-left:20px;
+    margin-right:20px;
     margin-left:${e=>e.marginLeft};
     filter: invert(${e=>e.invert});
-`,Ec=({handleDoubleClick:e,imgIcono:t,nombreIcono:n,FuiClikeado:r,darNombre:o,widthImg:i,marginLeftImg:l})=>d(Ue,{children:R(Mh,{onClick:()=>{o(n)},onDoubleClick:e,background:r?"#1e40bc":"#010080",children:[d(_h,{height:i===void 0?"45px":"auto",width:i===void 0?"80px":i,marginLeft:l,src:t,invert:r?"20%":"0%"}),d("p",{children:n})]})}),Fh="/assets/cholet-cb4c9990.webp",jh="/assets/starWars-d3e5377c.webp",Bh="/assets/webadc-00739be0.webp",Vh="/assets/spaFlixnet-7c1461c2.webp",Uh="/assets/casa_curutchet-c91fca71.webp",$h="/assets/PortafolioV1-00b8cc46.webp",Qh="/assets/PortafolioV2-8509c158.webp",Wh="/assets/asciidocgenerator-1869fae3.webp",Hh="/assets/MobileFlixnetV2-b2b4f856.webp",bh="/assets/WebFlixnetV2-2787213c.webp",Gh="/assets/MaquetaEstudioArq-c48c63d5.webp",Yh=[Fh,jh,Uh,Bh,$h,Qh,Gh,Wh,Vh,Hh,bh],Sa=["Cholet","StarWars","Curuchet","AdcWebMaqueta","PortafolioV1","PortafolioV2","MaquetaArq","AsciiDoc","SpaFlixnet","FlixNetMobile","FlixNetV2"];function Ic(e){return Yh[Xh(e)]}function Xh(e){return Sa.indexOf(e)}const Kh=E.div`
+`,Ec=({handleDoubleClick:e,imgIcono:t,nombreIcono:n,FuiClikeado:r,darNombre:o,widthImg:i,marginLeftImg:l})=>d(Ue,{children:R(Mh,{onClick:()=>{o(n)},onDoubleClick:e,background:r?"#1e40bc":"#010080",children:[d(_h,{height:i===void 0?"45px":"auto",width:i===void 0?"80px":i,marginLeft:l,src:t,invert:r?"20%":"0%"}),d("p",{children:n})]})}),Fh="/assets/cholet-cb4c9990.webp",jh="/assets/starWars-d3e5377c.webp",Bh="/assets/webadc-00739be0.webp",Vh="/assets/spaFlixnet-7c1461c2.webp",Uh="/assets/casa_curutchet-c91fca71.webp",$h="/assets/PortafolioV1-00b8cc46.webp",Qh="/assets/PortafolioV2-8509c158.webp",Wh="/assets/asciidocgenerator-1869fae3.webp",Hh="/assets/MobileFlixnetV2-b2b4f856.webp",bh="/assets/WebFlixnetV2-2787213c.webp",Gh="/assets/MaquetaEstudioArq-c48c63d5.webp",Yh=[Fh,jh,Uh,Bh,$h,Qh,Gh,Wh,Vh,Hh,bh],Sa=["Cholet.png","StarWars.png","Curuchet.png","ADC Web Maqueta","Portafolio V1","Portafolio V2","Maqueta Estudio","AsciiDoc","SpaFlixnet","FlixNet Mobile","FlixNet Web V2"];function Ic(e){return Yh[Xh(e)]}function Xh(e){return Sa.indexOf(e)}const Kh=E.div`
     display:grid;
     margin-top:15%;
     margin-left:-5%;
