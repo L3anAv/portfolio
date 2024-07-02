@@ -24,8 +24,8 @@ const ImgIconoVentana = styled.img`
     height:${props => props.height};
     object-fit:cover;
     margin-bottom:8px;
-    margin-left:20px;
-    margin-right:20px;
+    margin-left:32px;
+    margin-right:30px;
     margin-left:${props => props.marginLeft};
     filter: invert(${props => props.invert});
 `
