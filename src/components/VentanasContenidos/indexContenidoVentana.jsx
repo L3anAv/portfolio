@@ -21,7 +21,9 @@ export default function darChildrenCorrespondiente(nombre){
         return <IndexArchivo />
       case "Frontend":
         return <ProyectosLista ClaveTopic={"javascript"} />
-      case "Otros":
+      case "Backend":
+          return <ProyectosLista ClaveTopic={"backend"} />
+      case "Java":
         return <ProyectosLista ClaveTopic={"java"} />
       case "Sobre Mi":
         return <SobreMi />;

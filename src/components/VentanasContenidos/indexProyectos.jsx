@@ -28,7 +28,8 @@ export default function indexProyectos() {
     return (
         <ContenedorDeProyectos>
             <Icono src={darIconoCorrespondiente("Proyectos")}  decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={"Frontend"} width={'60px'} height={'auto'}/>
-            <Icono src={darIconoCorrespondiente("Proyectos")} decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={"Otros"} width={'60px'} height={'auto'}/>
+            <Icono src={darIconoCorrespondiente("Proyectos")}  decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={"Backend"} width={'60px'} height={'auto'}/>
+            <Icono src={darIconoCorrespondiente("Proyectos")} decirQuienSoy={decirQueIconoQuienSoy} nombreDelClikeado={nombreDelClikeado} nombreIcono={"Java"} width={'60px'} height={'auto'}/>
         </ContenedorDeProyectos>
     )
 }
