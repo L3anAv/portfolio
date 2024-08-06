@@ -427,7 +427,7 @@ function sobreMi() {
 
       <DetalleExperiencia>
       <p>mayo 2024 - Actualidad</p>
-      <p>Desarollador Frontend Colaborador | <a href="https://goldendoglinux.org/" target='_blanck'>Web</a></p>
+      <p>Desarollador Frontend Colaborador | <a href="https://docs.goldendoglinux.org/" target='_blanck'>Web</a></p>
       <p>GoldenDog Linux (Proyecto Open Source) \ Tecnología usada: Jekyll</p>
   
       <ol>
