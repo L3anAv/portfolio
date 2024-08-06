@@ -292,6 +292,10 @@ const DetalleExperiencia = styled.div`
 
     li{
       list-style-type: square;
+
+      a{
+        text-decoration:underline;
+      }
     }
 
     p{
@@ -394,27 +398,8 @@ function sobreMi() {
     <Texto>🚀 Soy una persona curiosa y apasionada por la resolución de problemas. Cuando me enfrento a un desafío, no me gusta quedarme sin respuestas. Me impulsa el deseo de adquirir nuevos conocimientos y habilidades para superar obstáculos y mejorar continuamente.</Texto>
     <Texto>✉ No dudes en contactarme si deseas saber más sobre mi experiencia o si estás interesado en discutir oportunidades de colaboración. Estoy emocionado por las posibilidades que el mundo del desarrollo tiene para ofrecerme.</Texto>
 
-    <Seccion>Experiencia</Seccion>
+    <Seccion>Experiencia Laboral</Seccion>
     
-    
-    <ExperienciaContainer>
-      <LineaTiempo/>
-      <RomboExperiencia>⬤</RomboExperiencia>
-
-      <DetalleExperiencia>
-      <p>mayo 2024 - Actualidad</p>
-      <p>Desarollador Frontend Colaborador | <a href="https://goldendoglinux.org/" target='_blanck'>Web</a></p>
-      <p>GoldenDog Linux (Proyecto Open Source) \ Tecnología usada: Jekyll</p>
-      
-      <p>Tareas Realizadas:</p>
-      <ol>
-        <li>Añadir una sección de documentación.</li>
-        <li>Corrección de errores varios, y reestructuración.</li>
-        <li>Añadir imágenes de proyectos con los cuales se colabora en el footer de la web.</li>
-      </ol>
-      </DetalleExperiencia>
-    </ExperienciaContainer>
-
     <ExperienciaContainer>
       <LineaTiempo/>
       <RomboExperiencia>⬤</RomboExperiencia>
@@ -423,17 +408,37 @@ function sobreMi() {
       <p>dic. 2022 - abr. 2023</p>
       <p>Desarollador Frontend Freelance | <a href="https://adcargentina.com/" target='_blanck'>Web</a></p>
       <p>ADC ARGENTINA UNIENDO EMPRESAS SA (Buenos Aires) \ Tecnología usada: ReactJS</p>
-      <p>Tareas Realizadas:</p>
+
       <ol>
         <li>Desarrollo con ReactJS.</li>
         <li>Configuración del dominio.</li>
-        <li>Diseño de maquetas de UI con Penpot.</li>
+        <li>Despliegue del proyecto en firebase.</li>
+        <li>Diseño de maquetas de UI con Penpot (similar figma).</li>
         <li>Organización de reuniones para extracción de requerimientos, y luego para feedback.</li>
       </ol>
       </DetalleExperiencia>
     </ExperienciaContainer>
-
     
+    <Seccion>Voluntariado</Seccion>
+
+    <ExperienciaContainer>
+      <LineaTiempo/>
+      <RomboExperiencia>⬤</RomboExperiencia>
+
+      <DetalleExperiencia>
+      <p>mayo 2024 - Actualidad</p>
+      <p>Desarollador Frontend Colaborador | <a href="https://goldendoglinux.org/" target='_blanck'>Web</a></p>
+      <p>GoldenDog Linux (Proyecto Open Source) \ Tecnología usada: Jekyll</p>
+  
+      <ol>
+        <li>Desplegar una <a href="https://goldendoglinux.org/" target="_blanck">web de documentación</a> con docsify.</li>
+        <li>Añadir una sección de documentación.</li>
+        <li>Reestructuración de carpetas, y archivos.</li>
+        <li>Coloqué un pequeño script para que la web se muestre en español automáticamente cuando corresponda al ingresar.</li>
+        <li>Añadir imágenes de proyectos con los cuales se colabora en el footer de la web.</li>
+      </ol>
+      </DetalleExperiencia>
+    </ExperienciaContainer>    
 
     </Contenedor>
   )
