@@ -61,10 +61,10 @@ const FotoPerfil = styled.img`
 
 export default function pantallaInicio({IrAlDesktop}) {
     
-    
+    const bootAudio = new Audio("src/assets/audio/boot.ogg")
+
     const [lines, setLines] = useState([]);
     const [mostrarInicio,setMostrarInicio] = useState(false)
-    
     const [fecha, setFecha] = useState('');
 
     function obtenerFecha(){
@@ -74,12 +74,12 @@ export default function pantallaInicio({IrAlDesktop}) {
         const hora = fechaActual.toLocaleTimeString();
 
         const fechaActualObtenida = `${mes} ${anio} - ${hora}`;
-        console.log(fechaActualObtenida)
         setFecha(fechaActualObtenida)
     }
     
     useEffect(() => {
         obtenerFecha();
+        bootAudio.play()
       }, []);
 
     useEffect(() => {
@@ -115,6 +115,7 @@ export default function pantallaInicio({IrAlDesktop}) {
 
         let currentIndex = 0;
         const interval = setInterval(() => {
+        
         setLines(prevLines => [...prevLines, bootText[currentIndex]]);
         currentIndex++;
         
@@ -122,7 +123,8 @@ export default function pantallaInicio({IrAlDesktop}) {
             setMostrarInicio(true)
             clearInterval(interval);
         }
-        }, 50);
+        }, 470);
+        
         return () => clearInterval(interval);
   }, [fecha]);
 
