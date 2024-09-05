@@ -151,7 +151,6 @@ export default function App() {
           <Inicio consultarSiExiste={consultarSiExisteToken} />
           <ContenedorPubli><a href={imagenActual.href} target="_blanck"><Publi src={imagenActual.src} /></a></ContenedorPubli>
           <Bilboard />
-          <ContenedorPubli2><a href={imagenActual2.href} target="_blanck"><Publi2 src={imagenActual2.src} /></a></ContenedorPubli2>
           </>
           : 
           <>

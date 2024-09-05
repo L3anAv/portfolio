@@ -1,15 +1,18 @@
-#billboard-outer {border:12px solid black; margin-right:8px;}
-#billboard-outer { margin-left:1px; margin-top:18%; grid-column:2; grid-row:1; height:334px; }
+#billboard-outer {border:none; margin-right:8px;}
+#billboard-outer { margin-left:1px; grid-column:2; grid-row:1; height:334px; }
 #billboard { list-style:none; }
 #billboard li { display:inline; float:left; }
-#billboard li div { height:334px; width:35px; position:absolute; background-size: cover;
+#billboard li div { 
+	height:334px; width:35px; position:absolute; background-size: cover;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	-webkit-transition-property: -webkit-transform;
+	transition-property: -webkit-transform;
 }
 
 /* ANIMATION */
 #billboard li div:nth-child(1) {
-	background-image:url("../../assets/images/adcpage.webp"); z-index:999;
+	background-image:url("../../assets/images/adcpage.webp"); z-index: 1;
 	-webkit-animation:rotate 25s linear;
 	-webkit-animation-iteration-count: infinite; /* Keep on looping */
 	-webkit-transform-origin:center;
@@ -26,7 +29,7 @@
 }
 
 #billboard li div:nth-child(2) {
-	background-image:url("../../assets/images/spaflix.webp"); z-index:998;
+	background-image:url("../../assets/images/spaflix.webp"); z-index: 1;
 	-webkit-animation:rotate2 25s linear;
 	-webkit-animation-iteration-count: infinite; /* Keep on looping */
 	-webkit-transform-origin:right;
@@ -43,7 +46,7 @@
 }
 
 #billboard li div:nth-child(3) {
-	background-image:url("../../assets/images/asciidocgenerator.webp"); z-index:997;
+	background-image:url("../../assets/images/asciidocgenerator.webp"); z-index: 1;
 	-webkit-animation:rotate3 25s linear;
 	-webkit-animation-iteration-count: infinite; /* Keep on looping */
 	-webkit-transform-origin:left;
@@ -78,8 +81,7 @@
 #billboard li:nth-child(16) div { background-position: -540px 0; margin-left:540px }
 #billboard li:nth-child(17) div { background-position: -576px 0; margin-left:576px }
 #billboard li:nth-child(18) div { background-position: -612px 0; margin-left:612px }
-#billboard li:nth-child(19) div { background-position: -648px 0; margin-left:648px }
-#billboard li:nth-child(20) div { background-position: -684px 0; margin-left:684px }
+
 
 @media (max-width:1132px){
 	#billboard-outer{

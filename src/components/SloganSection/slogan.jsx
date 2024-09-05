@@ -5,12 +5,8 @@ const Slogan = styled.p`
   
   color: #fff;
   margin-left:20px;
-  letter-spacing:2px;
+  letter-spacing:5px;
   display: ${props => props.displaySlogan};
-  
-  text-shadow:
-  2px 0 #0033db, -2px 0 #0033db, 0 2px #0033db, 0 -2px #0033db,
-  1px 1px #0033db, -1px -1px #0033db, 1px -1px #0033db, -1px 1px #0033db;
 
   background-image:
   linear-gradient(to right, #dddddd 2px, transparent 2px),
@@ -22,28 +18,16 @@ const Slogan = styled.p`
   font-family:Zimra;
   font-size: clamp(2.1875rem, 1.3773rem + 4.321vw, 6.5625rem);
 
-  text-shadow:${props => props.mostrarInicio
-  ? `none`
-  : ` 0 0 7px #0762bc,
-    0 0 10px #0762bc,
-    0 0 21px #0762bc,
-    0 0 42px #0762bc,
-    0 0 82px #0762bc,
-    0 0 92px #0762bc,
-    0 0 102px #0762bc,
-    0 0 151px #0762bc;`}
-
-  @media (max-width:1132px){
-    
-    grid-row:1;
-    grid-column:1;
-    text-shadow:none;
-    margin-left:5px;
-
-    background-image:none;
-    background-size: none;
-    background-position: none;
-  }
+  text-shadow: -2px 10px 0 #000,
+               -3px 9px 0 #000,
+               -4px 8px 0 #000,
+               -5px 6px 0 #000,
+               -6px 5px 0 #000,
+               -7px 5px 0 #000,
+               -8px 4px 0 #000,
+               -9px 3px 0 #000,
+               -10px 2px 0 #000,
+               -11px 1px 0 #000;
 
 `
 
@@ -57,7 +41,7 @@ const SloganContainer = styled.div`
   height:100vh;
   position:relative;
   align-items:center;
-  transform:scale(0.9);
+  transform:scale(0.95);
   flex-direction:column;
   justify-content: center;
   background-color:none;
@@ -66,54 +50,12 @@ const SloganContainer = styled.div`
     letter-spacing:8px;
   }
 
-  img{
-    z-index:-1;
-    position:absolute;
-    top:0;
-    margin:0;
-    right:20px;
-    transform: scaleX(-1);
-    animation:OpacidadEntrada 1.2s;
-  }
-
   @media (max-width:1132px){
 
     p{
       letter-spacing:3px;
     }
 
-    img{
-      display:none;
-    }
-  }
-`
-
-const Boton = styled.button`
-  position:absolute;
-  width:60%;
-  height:8%;
-  grid-row:1;
-  bottom:50px;
-  color:black;
-  margin-left:30px;
-  outline:1px solid black;
-  border-top:2px solid white;
-  border-left:2px solid white;
-  border-right:2px solid #c1c1c1;
-  border-bottom:2px solid #c1c1c1;
-  font-size: clamp(0.875rem, 0.713rem + 0.8642vw, 1.75rem);
-
-  
-  :active{
-    border-top:2px solid #c1c1c1;
-    border-left:2px solid #c1c1c1; 
-    border-right:2px solid white;
-    border-bottom:2px solid white;
-  }
-  
-
-  :hover{
-    cursor: url("/src/assets/cursor/pointer-old.png"), default;
   }
 `
 

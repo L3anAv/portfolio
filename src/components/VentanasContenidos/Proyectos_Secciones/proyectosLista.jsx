@@ -40,7 +40,7 @@ const Cards = styled.div`
 
 const Demo = styled.a`
     padding:2px;
-    color: #008080;
+    color: #4242f1;
     font-size:18px;
     cursor: pointer;
     font-family:MonoSpace;
@@ -48,7 +48,13 @@ const Demo = styled.a`
     span{
         text-decoration: underline;
         overflow-wrap: break-word;
+
+        &:hover{
+            background:#ff630f;
+        }
     }
+
+    
 
     @media(max-width:1132px){
         border:none;
@@ -59,12 +65,16 @@ const Demo = styled.a`
 const Link = styled.a`
     margin-left:5%;
     font-size:22px;
+    color: #4242f1;
     font-weight:800;
     cursor: pointer;
     user-select: none;
     font-family:MonoSpace;
-    color: #087dcd;
     text-decoration: inherit;
+
+    &:hover{
+       background:#ff630f;
+    }
 `
 
 const Topic = styled.div`

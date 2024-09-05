@@ -23,7 +23,7 @@ const ContenidoVentana = styled.div`
     overflow:${props => props.overflow};
 `
 
-const BarraMenu = styled.div`
+export const BarraMenu = styled.div`
     height:32px;
     display:flex;
     justify-content:space-between;
@@ -31,7 +31,7 @@ const BarraMenu = styled.div`
     background: linear-gradient(142deg, rgba(5,9,132,1) 0%, rgba(8,125,205,1) 100%);
 `
 
-const TituloVentana = styled.h2`
+export const TituloVentana = styled.h2`
     color:#fff;
     font-size:18px;
     margin-top:3px;
@@ -40,7 +40,7 @@ const TituloVentana = styled.h2`
     font-family:IBMRegular;
 `
 
-const CruzCierre = styled.div`
+export const CruzCierre = styled.div`
     width:42px;
     color:#000;
     font-size:15px;
@@ -123,7 +123,7 @@ export default function ventanaContenido({ImgParametro}) {
             <TituloVentana>{TituloParaVentana}</TituloVentana>
             <CruzCierre 
             onClick={ejecutarTareasCerrarVentana}
-            >X</CruzCierre>
+            >{TituloParaVentana === "Sobre Mi" ? '-' : 'X'}</CruzCierre>
         </BarraMenu>
         <ContenidoVentana
          overflow={overflowActive ? 'auto' : 'hidden'}
