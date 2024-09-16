@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {darAudio} from "../../utils/darAudio"
 import {colorBarraMenu,} from '../../utils/theme'
 import React, { useState, useEffect } from 'react'
 import BrowserIcon from '../../assets/iconos/browser.webp'
@@ -112,12 +113,12 @@ const Hora = styled.p`
 
 export default function index({consultarSiExiste}) {
 
+    const SonidoCierreSistema = darAudio("salida")
     const estadoVentanaActual = useVentanaContext()
     const setTituloVentana = useSetTituloVentana()
     const estadoVentana = useCambioDeEstadoVentana()
     const contenidoVentana = useSetContenidoVentana()
     const TituloVentanaActual = useGetTituloVentana()
-
     const [hora, setHora] = useState(new Date().toLocaleTimeString());
 
     useEffect(() => {
@@ -143,6 +144,7 @@ export default function index({consultarSiExiste}) {
     }
 
     function ApagarDesktop(){
+        SonidoCierreSistema.play()
         setearToken()
         consultarSiExiste()
     }

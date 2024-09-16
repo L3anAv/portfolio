@@ -18,7 +18,7 @@ const Contenedor = styled.div`
 `
 
 export default function indexArchivo() {
-  const nombreArchivo = ""
+  const nombreArchivo = "Utilidades Frontend"
   const [nombreDelClikeado, setNombreDelClikeado] = useState('')
 
   function darNombre(nombre){
@@ -26,13 +26,12 @@ export default function indexArchivo() {
   }
 
   const handleDoubleClick = () => {
-     window.open("https://github.com/L3anAv/frontend-utilidades?tab=readme-ov-file#Indice", "_blank")
+     window.open("https://gist.github.com/L3anAv/2c4595f73886c1f6606be7a3a3cd87f2", "_blank")
   }
 
   return (
     <Contenedor>
-      <IconoVentana darNombre={darNombre} FuiClikeado={nombreArchivo === nombreDelClikeado} nombreIcono={nombreArchivo} imgIcono={Archivo} widthImg={"35px"} marginLeftImg={"20px"} handleDoubleClick={handleDoubleClick}/>
-      <p>Utilidades Varias</p>
+      <IconoVentana darNombre={darNombre} FuiClikeado={nombreArchivo === nombreDelClikeado} nombreIcono={nombreArchivo} imgIcono={Archivo} widthImg={"45px"} marginLeftImg={"38px"} handleDoubleClick={handleDoubleClick}/>
     </Contenedor>
   )
 }

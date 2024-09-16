@@ -27,7 +27,6 @@ const Contenedor = styled.div`
 
 export default function index({consultarSiExiste}) {
 
-  
   const setTituloVentana = useSetTituloVentana()
   const TituloDeLaVentana = useGetTituloVentana()
   const estadoVentanaActual = useVentanaContext()

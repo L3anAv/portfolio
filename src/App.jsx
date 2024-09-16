@@ -48,14 +48,6 @@ const ContenedorPubli = styled.div`
     }
 `
 
-const ContenedorPubli2 = styled(ContenedorPubli)`
-    grid-row:2;
-
-    @media (max-width:1132px){
-      display:none;
-    }
-`
-
 const Publi = styled.img`
     
     margin-top:30px;
@@ -67,13 +59,6 @@ const Publi = styled.img`
       margin-right:2%;
       width:95%;
     }
-`
-
-const Publi2 = styled(Publi)`
-      
-      grid-row:2;
-      margin-top:0;
-      margin-bottom:20px;
 `
 
 export default function App() {
@@ -101,7 +86,6 @@ export default function App() {
   const cambiarEstadoVentana = useCambioDeEstadoVentana()
   const [mostrarInicio, setMostrarInicio] = useState(true)
   const [imagenActual, setImagenActual] = useState(InternetExplorer)
-  const [imagenActual2, setImagenActual2] = useState(InternetExplorer)
 
   function obtenerImagenAleatoria(){
     const index = obtenerIndex(imagenesNombres.length)
@@ -119,7 +103,6 @@ export default function App() {
     };
 
     setImagenActual(obtenerImagenAleatoria())
-    setImagenActual2(obtenerImagenAleatoria())
 
     document.addEventListener('keydown', handleKeyDown, false);
 

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React, {useState, useEffect} from 'react'
 import Triangulo from '../../assets/images/punta.webp'
+import { darAudio } from '../../utils/darAudio'
 
 const SeccionUno = styled.div`
   display: flex;
@@ -260,22 +261,25 @@ const ImagenRepetida = styled.img`
 function inicio({consultarSiExiste}) {
 
   const cantidadRepeticiones = 31;
-  const [letraBienvenida, setLetraBienvenida] = useState('o');
-
+  const click = darAudio("click")
+  
   var fechaActual = new Date();
   var año = fechaActual.getFullYear();
   var añoComoString = año.toString();
+
+  const [letraBienvenida, setLetraBienvenida] = useState('o');
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setLetraBienvenida((prevLetra) => (prevLetra === 'o' ? 'a' : 'o'));
     }, 2200);
 
-    // Limpiar el intervalo al desmontar el componente
+ 
     return () => clearInterval(intervalId);
   }, []);
 
   function cambioADesktop(){
+    click.play()
     setearToken()
     consultarSiExiste()
   }
