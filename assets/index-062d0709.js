@@ -1036,6 +1036,10 @@ color:#fff;
   height:370px;
   margin-top: 18%;
   position: relative;
+
+  @media(max-width:820px){
+        display:none;
+    }
 `,C0=E(_a)`
   height: 80%;
   color:${e=>e.colorCruz};
