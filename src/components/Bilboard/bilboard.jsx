@@ -11,6 +11,10 @@ const Contenedor = styled.div`
   height:370px;
   margin-top: 18%;
   position: relative;
+
+  @media(max-width:820px){
+        display:none;
+    }
 `;
 
 const Cruz = styled(CruzCierre)`
