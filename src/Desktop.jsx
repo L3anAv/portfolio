@@ -1,19 +1,20 @@
-import { darAudio } from './utils/darAudio'
 import React, {useState, useMemo} from 'react'
+import clickSound from "./assets/audio/click.ogg"
+import InicioSound from "./assets/audio/entrada.ogg"
 import PantallaInicio from './core_components/pantallaInicio/index'
 import DesktopPantalla from './core_components/desktopPantalla/index'
 
 export default function Desktop(props) {
 
+  const click = new Audio(clickSound)
+  const SonidoInicioSistema = new Audio(InicioSound)
   const [mostrarBloqueo, setmostrarBloqueo] = useState(true)
-  const SonidoInicioSistema = darAudio("entrada")
-  const click = darAudio("click")
   
   function IrAlDesktop(){
     click.play()
-    SonidoInicioSistema.play()
     setearToken()
     setmostrarBloqueo(false)
+    SonidoInicioSistema.play()
   }
 
   function consultarSiExisteToken(){

@@ -1,7 +1,7 @@
 import "./bilboard.css"
 import styled from "styled-components"
-import { darAudio } from "../../utils/darAudio";
 import { useState, useEffect, useRef } from "react";
+import errorSound from "../../assets/audio/error.ogg"
 import { BarraMenu, CruzCierre, TituloVentana } from "../Ventana"
 
 const Contenedor = styled.div`
@@ -95,7 +95,7 @@ const BotonError = styled.button`
 const bilboard = () => {
 
   const refLis = useRef(null)
-  const errorAudio = darAudio("error")
+  const errorAudio = new Audio(errorSound)
   const [ActivarError, setActivarError] = useState(false)
   const [AbrirVentanaError, SetAbrirVentanaError] = useState(false)
 

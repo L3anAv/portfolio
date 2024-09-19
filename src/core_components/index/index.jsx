@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import React, {useState, useEffect} from 'react'
+import clickSound from "../../assets/audio/click.ogg"
 import Triangulo from '../../assets/images/punta.webp'
-import { darAudio } from '../../utils/darAudio'
+
 
 const SeccionUno = styled.div`
   display: flex;
@@ -261,7 +262,7 @@ const ImagenRepetida = styled.img`
 function inicio({consultarSiExiste}) {
 
   const cantidadRepeticiones = 31;
-  const click = darAudio("click")
+  const click = new Audio(clickSound)
   
   var fechaActual = new Date();
   var año = fechaActual.getFullYear();

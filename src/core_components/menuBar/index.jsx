@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import {darAudio} from "../../utils/darAudio"
 import {colorBarraMenu,} from '../../utils/theme'
 import React, { useState, useEffect } from 'react'
 import BrowserIcon from '../../assets/iconos/browser.webp'
+import CierreSistemaSound from "../../assets/audio/salida.ogg"
 import {useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana, useVentanaContext, useGetTituloVentana} from '../../contexts/ventanaContext'
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 
@@ -113,7 +113,8 @@ const Hora = styled.p`
 
 export default function index({consultarSiExiste}) {
 
-    const SonidoCierreSistema = darAudio("salida")
+    const SonidoCierreSistema = new Audio(CierreSistemaSound)
+
     const estadoVentanaActual = useVentanaContext()
     const setTituloVentana = useSetTituloVentana()
     const estadoVentana = useCambioDeEstadoVentana()

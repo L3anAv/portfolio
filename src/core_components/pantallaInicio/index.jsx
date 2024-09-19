@@ -1,9 +1,9 @@
 import "../../crt.css"
 import styled from 'styled-components'
-import { darAudio } from "../../utils/darAudio"
 import {colorVentana} from '../../utils/theme'
 import React, {useState, useEffect} from 'react'
 import FotoPerf from '../../assets/images/sho.webp'
+import bootSound from "../../assets/audio/boot.ogg"
 
 const PantallaCarga = styled.div`
     padding:10px;
@@ -61,9 +61,9 @@ const FotoPerfil = styled.img`
 `
 
 export default function pantallaInicio({IrAlDesktop}) {
+   
+    const boot = new Audio(bootSound)
     
-    const boot = darAudio("boot")
-
     const [lines, setLines] = useState([]);
     const [mostrarInicio,setMostrarInicio] = useState(false)
     const [fecha, setFecha] = useState('');
@@ -80,8 +80,7 @@ export default function pantallaInicio({IrAlDesktop}) {
     
     useEffect(() => {
         obtenerFecha();
-
-        boot.volume = 0.2;
+        boot.volume = 0.1
         boot.play()
         
       }, []);
