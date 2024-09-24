@@ -2,13 +2,13 @@ import "../../crt.css"
 import React from 'react'
 import MenuBar from '../menuBar/index'
 import styled from 'styled-components'
+import { useEffect, useState } from "react"
 import IconsDesktopBar from '../iconsDesktop/index'
 import Ventana from '../../components/Ventana/index'
 import darIconoCorrespondiente  from '../../utils/darIcono'
 import CloudWallpaper from "../../assets/images/background.webp"
 import darChildrenCorrespondiente from '../../components/VentanasContenidos/indexContenidoVentana'
 import {useVentanaContext,useCambioDeEstadoVentana, useSetContenidoVentana, useSetTituloVentana, useGetTituloVentana} from '../../contexts/ventanaContext'
-import { useEffect } from "react"
 
 const Contenedor = styled.div`
   width:100%;
@@ -32,6 +32,7 @@ export default function index({consultarSiExiste}) {
   const estadoVentanaActual = useVentanaContext()
   const estadoVentana = useCambioDeEstadoVentana()
   const contenidoParaVentana = useSetContenidoVentana()
+  const [backgroundElegido, setBackgroundElegido] = useState()
 
   function AbrirVentanaCorrespondiente(){
     estadoVentana(true)
@@ -52,7 +53,7 @@ export default function index({consultarSiExiste}) {
 
   return (
     <>
-      <Contenedor className="crt">
+      <Contenedor className="crt" background={backgroundElegido}>
         <MenuBar consultarSiExiste={consultarSiExiste}/>
         <IconsDesktopBar nombreDelIcono={nombreDelIcono}/>
       </Contenedor>

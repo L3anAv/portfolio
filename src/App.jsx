@@ -11,6 +11,7 @@ import Pentium from "./assets/images/pentium.gif"
 import Hotmail from "./assets/images/hotmail.gif"
 import GoldenLinux from "./assets/images/goldenLinux.gif"
 import InternetExplorer from "./assets/images/internetexplorer.gif"
+
 import {useCambioDeEstadoVentana, useVentanaContext} from './contexts/ventanaContext'
 
 const Contenedor = styled.div`

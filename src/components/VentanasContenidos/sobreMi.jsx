@@ -386,7 +386,7 @@ function sobreMi() {
         <p><span>Institución</span> Universidad Nacional General Sarmiento</p>
       </CajaInfoAdicional>
 
-      <button><a href="https://drive.google.com/uc?export=download&id=1SNmOZPi2sWR2qdm12fynewXku8KgyekO">Curriculum Vitae</a></button>
+      <button><a href="https://drive.google.com/uc?export=download&id=1yoWRyJmw_4A6AhhaocCfqaa8tINzZPgE">Curriculum Vitae</a></button>
     </ContenedorSeccionInformacion>
     
     </ContenedorSuperior>
